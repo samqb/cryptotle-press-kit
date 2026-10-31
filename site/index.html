@@ -1,0 +1,1303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cryptotle Mexican Grave</title>
+<meta name="description" content="Cryptotle Mexican Grave. Flesh with Integrity. A Halloween hackathon parody.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Oswald:wght@500;600;700&family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#A81612; --red-dk:#86110E;
+  --adobo:#451400; --adobo-2:#6B3A1F;
+  --kraft:#F5EFE6; --kraft-2:#EADFCF; --kraft-3:#DCCBB2;
+  --white:#FFFFFF;
+  --pumpkin:#E8731A; --green:#7FB23A; --green-dk:#5E8A26;
+  --pink:#F49AB4; --pink-dk:#C9577A;
+  --bone:#E6DED0;
+  --ink-soft:#6E4A35;
+  --gutter:16px;
+  --max:1200px;
+  --head:"Oswald", "Arial Narrow", sans-serif;
+  --body:"Zilla Slab", Georgia, serif;
+  --hand:"Gochi Hand", "Comic Sans MS", cursive;
+  --sticker:4px 4px 0 var(--adobo);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+body{
+  font-variant-numeric:lining-nums;
+  margin:0;background:var(--kraft);color:var(--adobo);
+  font-family:var(--body);font-size:18px;line-height:1.5;
+  overflow-x:hidden;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .27 0 0 0 0 .08 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--head);font-weight:700;line-height:1.02;margin:0;text-transform:uppercase;letter-spacing:.01em}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+@media (min-width:720px){:root{--gutter:32px}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--pumpkin);outline-offset:3px;border-radius:4px}
+.hand{font-family:var(--hand);font-weight:400}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5em;
+  font-family:var(--head);font-weight:600;font-size:17px;letter-spacing:.07em;text-transform:uppercase;
+  padding:.72em 1.45em;border-radius:999px;border:2.5px solid var(--adobo);
+  background:var(--red);color:var(--white);text-decoration:none;cursor:pointer;
+  box-shadow:3px 3px 0 var(--adobo);transition:transform .12s ease, box-shadow .12s ease, background .12s;
+  line-height:1;white-space:nowrap;
+}
+.btn:hover{background:var(--red-dk)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--adobo)}
+.btn[disabled]{background:var(--kraft-3);color:var(--ink-soft);cursor:not-allowed;box-shadow:none;border-color:var(--kraft-3)}
+.btn-ghost{background:var(--white);color:var(--adobo)}
+.btn-ghost:hover{background:var(--kraft-2)}
+.btn-sm{font-size:14px;padding:.6em 1.1em}
+.btn-block{width:100%}
+
+/* Promo bar */
+.promo{background:var(--adobo);color:var(--kraft);text-align:center;font-size:15px;padding:9px var(--gutter);line-height:1.35}
+.promo strong{font-family:var(--head);font-weight:600;letter-spacing:.06em;color:var(--pumpkin);text-transform:uppercase;margin-right:.35em}
+.promo a{color:var(--kraft);text-underline-offset:3px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:40;background:var(--white);border-bottom:3px solid var(--adobo)}
+.nav-in{display:flex;align-items:center;gap:20px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand svg{width:48px;height:48px;flex-shrink:0}
+.wordmark{display:flex;flex-direction:column;line-height:1}
+.wordmark b{font-family:var(--head);font-weight:700;font-size:27px;letter-spacing:.06em;color:var(--red)}
+.wordmark span{font-family:var(--head);font-weight:500;font-size:11.5px;letter-spacing:.42em;color:var(--adobo);margin-top:3px}
+.nav-links{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav-links a{display:block;font-family:var(--head);font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:10px 12px;border-radius:6px}
+.nav-links a:hover{background:var(--kraft)}
+.nav-links small{display:block;font-family:var(--hand);font-size:14px;letter-spacing:0;text-transform:none;color:var(--red);font-weight:400;margin-top:-2px}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.bag-link{position:relative;display:inline-flex;width:46px;height:46px;align-items:center;justify-content:center;border-radius:50%;text-decoration:none;border:2.5px solid var(--adobo);background:var(--kraft)}
+.bag-link svg{width:24px;height:24px}
+.bag-count{position:absolute;top:-6px;right:-6px;min-width:22px;height:22px;border-radius:11px;background:var(--red);color:#fff;font:600 12px/22px var(--head);text-align:center;padding:0 5px;border:2px solid var(--white)}
+.bag-count[data-n="0"]{display:none}
+.nav-links .nav-order{display:none}
+.menu-toggle{display:none;background:none;border:2.5px solid var(--adobo);border-radius:8px;width:46px;height:46px;cursor:pointer;padding:0;align-items:center;justify-content:center}
+.menu-toggle svg{width:24px;height:24px}
+@media (max-width:1060px){
+  .nav-links{position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--white);border-bottom:3px solid var(--adobo);padding:8px var(--gutter) 16px;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px 4px;font-size:20px;border-bottom:1px dashed var(--kraft-3);border-radius:0}
+  .menu-toggle{display:inline-flex}
+  .nav-actions{margin-left:auto}
+}
+@media (max-width:520px){
+  .nav-actions .btn{display:none}
+  .nav-links .nav-order{display:block}
+  .nav-links .nav-order a{color:var(--red)}
+  .wordmark b{font-size:23px}
+  .brand svg{width:42px;height:42px}
+}
+
+/* Sections */
+section{scroll-margin-top:80px}
+.section{padding:88px 0}
+@media (max-width:720px){.section{padding:60px 0}}
+.sec-head{max-width:720px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(40px,6vw,68px);color:var(--red)}
+.sec-head p{margin-top:14px;font-size:20px;color:var(--ink-soft)}
+
+/* Hero */
+.hero{padding:48px 0 0;overflow:hidden;position:relative}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:end}
+@media (min-width:900px){.hero-grid{grid-template-columns:1fr 1.12fr;gap:16px}}
+.hero-copy{padding-bottom:40px}
+@media (min-width:900px){.hero-copy{padding-bottom:110px}}
+.hero h1{font-size:clamp(60px,9.6vw,128px);color:var(--red);line-height:.9;letter-spacing:-.005em}
+.hero .lede{font-size:clamp(19px,2.1vw,23px);max-width:30ch;margin-top:22px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-ctas .btn{font-size:19px}
+.hero-note{margin-top:22px;font-size:16px;color:var(--ink-soft);display:flex;gap:8px;align-items:center}
+.hero-note i{width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block;box-shadow:0 0 0 3px rgba(127,178,58,.25)}
+.hero-art{position:relative;margin-inline:calc(var(--gutter) * -1)}
+.hero-art svg{display:block;width:100%;height:auto}
+.hand-rise{animation:rise 1.6s cubic-bezier(.2,.9,.25,1.15) .35s both}
+.hand-wave{transform-origin:530px 360px;transform-box:view-box;animation:wave 2.4s ease-in-out 2.1s 2}
+@keyframes rise{from{transform:translateY(190px)}to{transform:translateY(0)}}
+@keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-7deg)}75%{transform:rotate(6deg)}}
+.dirt-band{height:26px;background:var(--adobo-2);border-top:3px solid var(--adobo);position:relative}
+
+/* Menu */
+.menu{background:var(--white);border-bottom:3px solid var(--adobo)}
+.formats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.format{background:var(--kraft);border:2.5px solid var(--adobo);border-radius:18px;padding:18px 20px 22px;display:flex;flex-direction:column;box-shadow:var(--sticker)}
+.format .art{background:var(--white);border-radius:12px;border:2px dashed var(--kraft-3);aspect-ratio:6/4.4;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.format .art svg{width:78%;height:auto}
+.format h3{font-size:30px}
+.format .aka{font-family:var(--hand);color:var(--red);font-size:19px;line-height:1.2;margin:4px 0 0;flex:none}
+.format p{font-size:17px;margin:10px 0 16px;flex:1}
+@media (max-width:600px){.format .art{aspect-ratio:auto;height:170px}.format .art svg{width:190px;height:150px}}
+.format .row{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.price{font-family:var(--head);font-weight:600;font-size:21px;letter-spacing:.03em}
+.badge{display:inline-block;font-family:var(--head);font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--pumpkin);color:var(--white);padding:3px 9px;border-radius:999px;vertical-align:middle;margin-left:6px}
+.badge-green{background:var(--green-dk)}
+.menu-lists{display:grid;grid-template-columns:1fr;gap:34px;margin-top:64px}
+@media (min-width:860px){.menu-lists{grid-template-columns:1.15fr 1fr 1fr}}
+.menu-lists h3{font-size:26px;border-bottom:3px solid var(--adobo);padding-bottom:8px;margin-bottom:6px}
+.menu-lists .note{font-size:15px;color:var(--ink-soft);margin-bottom:8px}
+.mi{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1.5px dashed var(--kraft-3)}
+.mi svg{width:62px;height:52px}
+.mi b{font-family:var(--head);font-weight:600;font-size:19px;letter-spacing:.03em;text-transform:uppercase}
+.mi span{display:block;font-size:15.5px;color:var(--ink-soft);line-height:1.35}
+.mi .badge{display:inline-block;color:var(--white);font-size:11.5px;line-height:1.4;margin-top:0}
+.mi em{font-style:normal;font-family:var(--head);font-weight:500;font-size:16px;white-space:nowrap}
+
+/* Builder */
+.builder{background:var(--kraft)}
+.build-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+@media (min-width:980px){.build-grid{grid-template-columns:1fr 360px}}
+.step{background:var(--white);border:2.5px solid var(--adobo);border-radius:16px;padding:20px;margin-bottom:20px}
+.step-h{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.step-n{font-family:var(--head);font-weight:700;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;align-self:center}
+.step-h h3{font-size:24px}
+.step-h small{font-size:15px;color:var(--ink-soft)}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+@media (max-width:420px){.opts{grid-template-columns:1fr 1fr;gap:10px}}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;top:8px;left:8px;width:1px;height:1px;margin:0;pointer-events:none}
+.opt label{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:12px 8px 12px;border:2px solid var(--kraft-3);border-radius:12px;background:var(--kraft);cursor:pointer;height:100%;transition:border-color .12s, background .12s}
+.opt svg{width:84px;height:66px}
+.opt .on{font-family:var(--head);font-weight:600;font-size:16.5px;letter-spacing:.03em;text-transform:uppercase;line-height:1.1}
+.opt .op{font-size:14.5px;color:var(--ink-soft)}
+.opt label:hover{border-color:var(--adobo)}
+.opt input:focus-visible + label{outline:3px solid var(--pumpkin);outline-offset:2px}
+.opt input:checked + label{border-color:var(--red);background:#FCEDEA;box-shadow:inset 0 0 0 1.5px var(--red)}
+.opt input:checked + label::after{content:"";position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.build-bar{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;background:var(--adobo);color:var(--kraft);border-radius:16px;padding:16px 20px}
+.build-bar .sum{flex:1 1 260px;font-size:16.5px;line-height:1.35}
+.build-bar .sum b{font-family:var(--head);font-weight:600;font-size:22px;color:#fff;letter-spacing:.03em;display:block}
+.build-bar .btn{box-shadow:3px 3px 0 #000;border-color:#000}
+
+.bag{background:var(--white);border:2.5px solid var(--adobo);border-radius:18px;box-shadow:var(--sticker);padding:20px;position:sticky;top:96px}
+.bag h3{font-size:28px;display:flex;justify-content:space-between;align-items:center}
+.bag h3 svg{width:40px;height:40px}
+.bag-empty{padding:18px 0 6px;color:var(--ink-soft);font-size:16.5px}
+.bag-list{list-style:none;margin:14px 0 0;padding:0;max-height:380px;overflow:auto}
+.bag-item{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:1.5px dashed var(--kraft-3)}
+.bag-item b{font-family:var(--head);font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+.bag-item .det{grid-column:1/-1;font-size:14.5px;color:var(--ink-soft);line-height:1.35}
+.bag-item .lp{font-family:var(--head);font-weight:500;font-size:17px}
+.qty{grid-column:1/-1;display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:30px;height:30px;border-radius:50%;border:2px solid var(--adobo);background:var(--kraft);font:700 17px/1 var(--head);cursor:pointer;color:var(--adobo)}
+.qty button:hover{background:var(--kraft-2)}
+.qty span{font-family:var(--head);font-weight:600;min-width:18px;text-align:center}
+.qty .rm{width:auto;border:none;background:none;font:500 15px var(--body);text-decoration:underline;margin-left:auto;border-radius:4px;padding:2px 4px}
+.bag-total{display:flex;justify-content:space-between;align-items:baseline;padding:16px 0;font-family:var(--head);font-weight:700;font-size:24px;text-transform:uppercase}
+.bag-fine{font-size:14px;color:var(--ink-soft);margin-top:10px;text-align:center}
+
+/* Catering */
+.catering{background:var(--pumpkin);border-block:3px solid var(--adobo);color:var(--adobo)}
+.cat-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;padding-block:44px}
+@media (min-width:860px){.cat-grid{grid-template-columns:auto 1fr auto;gap:40px}}
+.cat-grid svg{width:180px;height:auto}
+.catering h2{font-size:clamp(36px,5vw,56px);color:var(--white);text-shadow:3px 3px 0 var(--adobo)}
+.catering p{font-size:19px;margin-top:8px;max-width:52ch}
+
+/* 206 */
+.bones{background:var(--white);border-bottom:3px solid var(--adobo)}
+.bones-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:900px){.bones-grid{grid-template-columns:1fr 1fr;gap:64px}}
+.big206{font-family:var(--head);font-weight:700;font-size:clamp(150px,26vw,300px);line-height:.8;color:var(--red);letter-spacing:-.02em;display:block}
+.bones h2{font-size:clamp(40px,6vw,66px);margin-top:10px}
+.bones .lede{font-size:20px;margin-top:18px;max-width:40ch}
+.bones .hand{font-size:24px;color:var(--red);margin-top:18px;display:block;transform:rotate(-2deg);transform-origin:left}
+.facts{border:3px solid var(--adobo);background:var(--white);padding:14px 18px 16px;font-family:var(--body);box-shadow:var(--sticker);max-width:520px;width:100%;justify-self:center}
+.facts h3{font-size:40px;letter-spacing:.005em;text-transform:none;border-bottom:1.5px solid var(--adobo);padding-bottom:4px}
+.facts .serv{font-size:15.5px;padding:6px 0;border-bottom:10px solid var(--adobo);display:flex;justify-content:space-between;gap:12px}
+.facts ul{list-style:none;padding:0;margin:0;columns:2;column-gap:22px}
+@media (max-width:350px){.facts ul{columns:1}}
+.facts li{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px solid var(--adobo);font-size:16px;break-inside:avoid}
+.facts li b{font-weight:600;font-variant-numeric:lining-nums tabular-nums}
+.facts .tot{display:flex;justify-content:space-between;border-top:6px solid var(--adobo);margin-top:8px;padding-top:8px;font-family:var(--head);font-weight:700;font-size:24px;text-transform:uppercase}
+.facts .fine{font-size:13.5px;color:var(--ink-soft);margin-top:8px;line-height:1.4}
+
+/* Rewards */
+.rewards{background:var(--red);color:var(--white);border-bottom:3px solid var(--adobo);overflow:hidden}
+.rw-grid{display:grid;grid-template-columns:1fr;gap:44px;align-items:center}
+@media (min-width:900px){.rw-grid{grid-template-columns:1.1fr 1fr;gap:56px}}
+.rewards .kicker{font-family:var(--hand);font-size:26px;color:#FFD7B5}
+.rewards h2{font-size:clamp(44px,6.4vw,78px);margin-top:4px}
+.rewards .tag{font-family:var(--head);font-weight:600;font-size:clamp(22px,2.6vw,30px);letter-spacing:.04em;text-transform:uppercase;color:#FFD7B5;margin-top:12px}
+.perks{list-style:none;padding:0;margin:28px 0 30px;display:grid;gap:14px}
+.perks li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;font-size:18px}
+.perks li svg{width:44px;height:44px}
+.perks b{font-family:var(--head);font-weight:600;font-size:20px;letter-spacing:.03em;text-transform:uppercase;display:block}
+.rewards .btn{background:var(--white);color:var(--red);box-shadow:4px 4px 0 var(--adobo)}
+.rewards .btn:hover{background:var(--kraft)}
+.rw-joined{display:inline-block;margin-left:14px;font-family:var(--hand);font-size:22px;vertical-align:middle}
+.card-wrap{display:flex;justify-content:center;perspective:1000px}
+.rcard{width:min(420px,100%);aspect-ratio:1.586;border-radius:22px;background:var(--adobo);border:3px solid #2A0C00;box-shadow:8px 8px 0 #2A0C00;padding:22px 24px;position:relative;overflow:hidden;transform:rotate(-4deg);color:var(--kraft);display:flex;flex-direction:column}
+.rcard::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:26px solid rgba(232,115,26,.22)}
+.rcard .top{display:flex;align-items:center;gap:10px;position:relative}
+.rcard .top svg{width:46px;height:46px}
+.rcard .top b{font-family:var(--head);font-weight:700;font-size:22px;letter-spacing:.08em}
+.rcard .top span{display:block;font-family:var(--head);font-weight:500;font-size:11px;letter-spacing:.32em;color:var(--pumpkin)}
+.rcard .pts{margin-top:auto;font-family:var(--head);font-weight:700;font-size:44px;line-height:1;color:#fff}
+.rcard .pts small{font-size:16px;font-weight:500;letter-spacing:.08em;margin-left:6px;color:var(--kraft-3)}
+.rcard .bar{height:12px;background:rgba(255,255,255,.14);border-radius:6px;margin-top:12px;overflow:hidden}
+.rcard .bar i{display:block;height:100%;width:68%;background:var(--green);border-radius:6px}
+.rcard .meta{display:flex;justify-content:space-between;font-size:14px;margin-top:8px;gap:10px}
+
+/* Values */
+.values{background:var(--kraft)}
+.val-feature{background:var(--white);border:3px solid var(--adobo);border-radius:22px;padding:28px;box-shadow:var(--sticker);display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+@media (min-width:900px){.val-feature{grid-template-columns:1fr 1.1fr;padding:36px 40px}}
+.val-feature h3{font-size:clamp(30px,3.6vw,42px);color:var(--red)}
+.val-feature p{font-size:18.5px;margin-top:12px;max-width:52ch}
+.tombs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(4px,1.2vw,12px);align-items:end;max-width:520px}
+.tombs svg{width:100%;height:auto;display:block}
+.tombs-cap{font-family:var(--hand);color:var(--red);font-size:22px;margin-top:10px}
+.val-row{display:grid;grid-template-columns:1fr;gap:22px;margin-top:22px}
+@media (min-width:860px){.val-row{grid-template-columns:1.2fr 1fr 1fr}}
+.val{padding:24px;border-radius:16px;border:2.5px solid var(--adobo);background:var(--white)}
+.val svg{width:74px;height:74px;display:block;margin-bottom:12px}
+.val h3{font-size:25px}
+.val p{font-size:17px;margin-top:8px}
+.val-bfi{background:var(--adobo);color:var(--kraft);border-color:var(--adobo)}
+.val-bfi h3{color:#fff}
+.gauge{width:100%!important;height:auto!important;max-width:320px}
+.bfi-read{font-family:var(--head);font-weight:700;font-size:40px;color:var(--green);line-height:1;margin-top:-6px}
+.bfi-read small{font-size:17px;color:var(--kraft-3);font-weight:500;letter-spacing:.06em;margin-left:4px}
+
+/* Crypts */
+.crypts{background:var(--white);border-top:3px solid var(--adobo)}
+.crypt-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+@media (min-width:900px){.crypt-grid{grid-template-columns:400px 1fr}.map-box{position:sticky;top:96px}}
+.search{display:flex;gap:10px;margin-bottom:16px}
+.search input{flex:1;min-width:0;font:500 17px var(--body);color:var(--adobo);padding:12px 16px;border:2.5px solid var(--adobo);border-radius:999px;background:var(--kraft)}
+.search input::placeholder{color:#9A7A66}
+.crypt-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.crypt{border:2px solid var(--kraft-3);border-radius:14px;padding:14px 16px;background:var(--kraft);cursor:pointer;text-align:left;width:100%;font:inherit;color:inherit;display:block}
+.crypt:hover,.crypt.active{border-color:var(--adobo)}
+.crypt.active{background:#FCEDEA;border-color:var(--red)}
+.crypt b{font-family:var(--head);font-weight:600;font-size:20px;letter-spacing:.03em;text-transform:uppercase}
+.crypt .st{float:right;font-family:var(--head);font-weight:600;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--kraft-3);margin-left:8px}
+.crypt .st.open{background:var(--green-dk);color:#fff}
+.crypt span{display:block;font-size:15.5px;color:var(--ink-soft);margin-top:3px;line-height:1.35}
+.crypt-open-cta{margin-top:12px}
+.no-crypt{padding:16px;border:2px dashed var(--kraft-3);border-radius:14px;color:var(--ink-soft)}
+.map-box{border:3px solid var(--adobo);border-radius:22px;background:#E9F0F4;overflow:hidden;box-shadow:var(--sticker);position:relative}
+.map-box svg{display:block;width:100%;height:auto}
+.map-cap{position:absolute;right:14px;top:10px;font-family:var(--hand);font-size:18px;color:var(--adobo);background:rgba(255,255,255,.75);padding:2px 10px;border-radius:8px}
+.pin{cursor:pointer}
+.pin .pin-ring{opacity:0}
+.pin.active .pin-ring{opacity:1;animation:ping 1.6s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes ping{from{transform:scale(.6);opacity:.9}to{transform:scale(1.8);opacity:0}}
+
+/* Footer */
+.foot{background:var(--adobo);color:var(--kraft);padding:64px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1fr;gap:36px}
+@media (min-width:860px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr 1fr}}
+.foot .brand .wordmark b{color:#fff}
+.foot .brand .wordmark span{color:var(--pumpkin)}
+.foot .brand svg{width:64px;height:64px}
+.foot p{font-size:16.5px;margin-top:14px;max-width:34ch;color:var(--kraft-3)}
+.foot h4{font-size:17px;letter-spacing:.1em;color:var(--pumpkin);margin-bottom:10px}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.foot ul a{text-decoration:none;font-size:16.5px}
+.foot ul a:hover{text-decoration:underline;text-underline-offset:3px}
+.foot ul small{display:block;font-size:13.5px;color:#B79C86}
+.apps{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.appb{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border:1.5px solid #8F7B6C;border-radius:10px;padding:8px 14px 8px 12px;text-decoration:none;min-width:168px}
+.appb .gl{width:22px;height:28px;position:relative;flex-shrink:0}
+.appb .gl.tomb{background:#fff;border-radius:11px 11px 3px 3px}
+.appb .gl.tomb::before,.appb .gl.tomb::after{content:"";position:absolute;background:#000;left:50%;transform:translateX(-50%)}
+.appb .gl.tomb::before{width:3px;height:14px;top:6px}
+.appb .gl.tomb::after{width:11px;height:3px;top:10px}
+.appb .gl.play{width:0;height:0;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent var(--green)}
+.appb .gl.play::after{content:"";position:absolute;left:-19px;top:-4px;width:8px;height:8px;border-radius:50%;background:var(--pink)}
+.appb small{display:block;font-size:11px;line-height:1.1;letter-spacing:.04em}
+.appb b{display:block;font-family:var(--head);font-weight:600;font-size:19px;line-height:1.1;letter-spacing:.02em}
+.foot-bottom{margin-top:48px;padding-top:22px;border-top:1.5px dashed #7A5640;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center;font-size:15px;color:var(--kraft-3)}
+.foot .disclaimer{font-size:16px;color:var(--kraft);max-width:70ch;margin-top:0}
+.disclaimer b{color:var(--pumpkin);font-weight:600}
+
+/* Modal */
+.modal-bg{position:fixed;inset:0;background:rgba(43,12,0,.62);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:24px var(--gutter);overflow-y:auto}
+.modal-bg.open{display:flex}
+.modal{background:var(--kraft);border:3px solid var(--adobo);border-radius:22px;box-shadow:6px 6px 0 var(--adobo);width:min(560px,100%);padding:26px 22px 22px;position:relative;margin:auto 0;animation:pop .22s ease-out}
+@keyframes pop{from{transform:translateY(14px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.modal h2{font-size:clamp(30px,6vw,40px);color:var(--red);padding-right:44px}
+.modal .x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:2.5px solid var(--adobo);background:var(--white);cursor:pointer;font:700 20px/1 var(--head);color:var(--adobo)}
+.modal fieldset{border:none;padding:0;margin:20px 0 0}
+.modal legend{font-family:var(--head);font-weight:600;font-size:18px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;padding:0}
+.partners{display:grid;grid-template-columns:1fr;gap:10px}
+@media (min-width:480px){.partners{grid-template-columns:1fr 1fr}}
+.partner{position:relative}
+.partner input{position:absolute;opacity:0;top:8px;left:8px;width:1px;height:1px;margin:0;pointer-events:none}
+.partner label{display:block;padding:14px;border:2.5px solid var(--kraft-3);border-radius:14px;background:var(--white);cursor:pointer;height:100%}
+.partner label b{font-family:var(--head);font-weight:700;font-size:21px;letter-spacing:.03em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.partner label b svg{width:30px;height:30px}
+.partner label span{display:block;font-size:15px;color:var(--ink-soft);margin-top:4px;line-height:1.35}
+.partner label em{font-style:normal;font-family:var(--head);font-weight:600;font-size:15px;display:block;margin-top:6px}
+.partner input:checked + label{border-color:var(--red);background:#FCEDEA}
+.partner input:focus-visible + label{outline:3px solid var(--pumpkin);outline-offset:2px}
+.field{display:block;margin-top:16px}
+.field span{display:block;font-family:var(--head);font-weight:600;font-size:16px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px}
+.field input,.field select{width:100%;font:500 17px var(--body);color:var(--adobo);padding:12px 14px;border:2.5px solid var(--adobo);border-radius:12px;background:var(--white)}
+.summary{margin-top:18px;background:var(--white);border:2px dashed var(--kraft-3);border-radius:14px;padding:12px 16px;font-size:16px}
+.summary div{display:flex;justify-content:space-between;gap:12px;padding:3px 0}
+.summary .t{font-family:var(--head);font-weight:700;font-size:22px;text-transform:uppercase;border-top:2px solid var(--adobo);margin-top:6px;padding-top:8px}
+.modal-actions{margin-top:18px}
+.err{color:var(--red);font-weight:600;font-size:15.5px;margin-top:8px;min-height:1em}
+.confirm{text-align:center}
+.confirm svg.big{width:200px;height:auto;margin:6px auto 0;display:block}
+.confirm h2{padding-right:0;margin-top:6px}
+.confirm .eta{font-family:var(--head);font-weight:600;font-size:24px;letter-spacing:.04em;text-transform:uppercase;margin-top:8px}
+.confirm .eta span{color:var(--red)}
+.confirm p{margin-top:10px;font-size:17px}
+.track{margin:20px 0 6px;text-align:left}
+.track .bar{height:14px;border-radius:7px;background:var(--kraft-3);overflow:hidden;border:2px solid var(--adobo)}
+.track .bar i{display:block;height:100%;width:0;background:repeating-linear-gradient(-45deg,var(--green) 0 10px,var(--green-dk) 10px 20px);transition:width 6s cubic-bezier(.2,.6,.2,1)}
+.track ol{list-style:none;display:flex;justify-content:space-between;padding:0;margin:8px 0 0;font-family:var(--head);font-weight:500;font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+.track ol li.done{color:var(--adobo);font-weight:700}
+
+.toast{visibility:hidden;position:fixed;left:50%;bottom:22px;transform:translate(-50%,140%);background:var(--adobo);color:#fff;font-family:var(--head);font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:12px 20px;border-radius:999px;z-index:90;transition:transform .25s ease;box-shadow:3px 3px 0 #000;max-width:calc(100% - 32px);text-align:center}
+.toast.show{visibility:visible;transform:translate(-50%,0)}
+</style>
+</head>
+<body id="top">
+
+<!-- Reusable drawings -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ico-brain" viewBox="0 0 120 90" overflow="visible">
+      <path d="M20 60 C5 55 5 35 18 30 C16 15 35 8 45 14 C52 4 72 4 78 14 C92 8 110 18 104 34 C116 42 112 62 98 64 C96 76 78 82 68 74 C60 84 38 82 34 72 C24 74 16 68 20 60 Z" fill="#F49AB4" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <g fill="none" stroke="#C9577A" stroke-width="3" stroke-linecap="round">
+        <path d="M29 42 C35 33 46 37 44 45 C42 53 52 55 56 49"/>
+        <path d="M60 15 C57 28 65 36 61 50"/>
+        <path d="M70 24 C70 32 78 34 84 29"/>
+        <path d="M76 42 C85 35 95 43 89 51 C85 57 91 62 97 58"/>
+        <path d="M38 64 C45 58 53 62 57 69"/>
+        <path d="M65 57 C69 51 76 52 78 60"/>
+        <path d="M43 24 C39 28 41 34 48 34"/>
+        <path d="M22 50 C26 50 28 54 26 58"/>
+      </g>
+      <ellipse cx="36" cy="26" rx="7" ry="4" fill="#fff" opacity=".65" transform="rotate(-25 36 26)"/>
+    </symbol>
+
+    <symbol id="ico-medallion" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="47" fill="#A81612" stroke="#451400" stroke-width="3.5"/>
+      <circle cx="50" cy="50" r="39" fill="none" stroke="#F5EFE6" stroke-width="2" stroke-dasharray="4 4"/>
+      <path d="M30 37 C42 27 68 30 73 49 C78 67 63 81 41 84 C55 74 59 61 53 52 C47 43 39 40 30 37 Z" fill="#F49AB4" stroke="#451400" stroke-width="3" stroke-linejoin="round"/>
+      <g fill="none" stroke="#C9577A" stroke-width="2.4" stroke-linecap="round">
+        <path d="M41 37 C47 42 53 37 60 43"/>
+        <path d="M63 50 C67 56 60 60 64 67"/>
+        <path d="M52 47 C56 51 52 56 56 60"/>
+      </g>
+      <path d="M31 37 C25 33 24 26 28 19" fill="none" stroke="#451400" stroke-width="7" stroke-linecap="round"/>
+      <path d="M31 37 C25 33 24 26 28 19" fill="none" stroke="#7FB23A" stroke-width="4" stroke-linecap="round"/>
+      <path d="M24 38 C27 31 36 31 39 36 C34 40 28 41 24 38 Z" fill="#7FB23A" stroke="#451400" stroke-width="2.2" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="ico-bowl" viewBox="0 0 120 100" overflow="visible">
+      <path d="M8 50 L112 50 C110 80 89 96 60 96 C31 96 10 80 8 50 Z" fill="#D9C3A0" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M18 62 C40 68 80 68 102 62" fill="none" stroke="#B89A72" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="60" cy="50" rx="54" ry="11" fill="#EFE5D3" stroke="#451400" stroke-width="3.5"/>
+      <ellipse cx="60" cy="47" rx="46" ry="9" fill="#fff" stroke="#451400" stroke-width="2.5"/>
+      <g fill="#451400"><ellipse cx="22" cy="46" rx="3.2" ry="2"/><ellipse cx="28" cy="50" rx="3.2" ry="2"/><ellipse cx="94" cy="49" rx="3.2" ry="2"/><ellipse cx="99" cy="45" rx="3" ry="1.8"/></g>
+      <g fill="#F2C14E" stroke="#451400" stroke-width="1"><circle cx="86" cy="44" r="2.6"/><circle cx="91" cy="50" r="2.6"/><circle cx="82" cy="51" r="2.6"/></g>
+      <g fill="#C62828"><rect x="30" y="41" width="5" height="5" rx="1"/><rect x="36" y="48" width="5" height="5" rx="1"/></g>
+      <use href="#ico-brain" x="30" y="10" width="62" height="46"/>
+      <path d="M98 30 C110 32 114 42 108 48 Z" fill="#7FB23A" stroke="#451400" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M100 35 L106 44" stroke="#C7E39A" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ico-burrito" viewBox="0 0 120 100" overflow="visible">
+      <g transform="rotate(-16 60 55)">
+        <rect x="12" y="32" width="96" height="46" rx="23" fill="#F3DDB0" stroke="#451400" stroke-width="3.5"/>
+        <path d="M62 32 H85 A23 23 0 0 1 85 78 H62 Z" fill="#CDD3DA" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M70 38 L74 46 L69 52 L75 60 L70 70" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M84 40 L80 50 L86 58 L82 70" fill="none" stroke="#9AA3AD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M38 34 C42 46 40 62 36 76" fill="none" stroke="#D6B47A" stroke-width="2.5" stroke-linecap="round"/>
+        <ellipse cx="25" cy="55" rx="13" ry="22" fill="#F49AB4" stroke="#451400" stroke-width="3.5"/>
+        <g fill="none" stroke="#C9577A" stroke-width="2.5" stroke-linecap="round"><path d="M20 42 C26 44 26 50 21 52"/><path d="M28 56 C22 60 24 66 30 66"/><path d="M18 60 C20 62 19 66 16 66"/></g>
+      </g>
+    </symbol>
+
+    <symbol id="ico-tacos" viewBox="0 0 120 100" overflow="visible">
+      <g>
+        <path d="M54 30 C50 22 56 14 62 18" fill="none"/>
+        <ellipse cx="74" cy="34" rx="6" ry="11" fill="#F2C6A8" stroke="#451400" stroke-width="2.8" transform="rotate(10 74 34)"/>
+        <ellipse cx="75" cy="27" rx="3.4" ry="3" fill="#FFF4EC" stroke="#451400" stroke-width="1.4" transform="rotate(10 75 27)"/>
+        <ellipse cx="88" cy="38" rx="5" ry="9" fill="#F2C6A8" stroke="#451400" stroke-width="2.8" transform="rotate(22 88 38)"/>
+        <ellipse cx="90" cy="32" rx="2.8" ry="2.5" fill="#FFF4EC" stroke="#451400" stroke-width="1.4"/>
+        <path d="M58 46 C62 40 66 44 70 40 C74 44 78 38 82 42 C86 38 90 44 94 40 C98 44 104 42 106 46 Z" fill="#7FB23A" stroke="#451400" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M56 46 A26 30 0 0 0 108 46 Z" fill="#F2C14E" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+        <g fill="#D9A23A"><circle cx="70" cy="58" r="2"/><circle cx="84" cy="66" r="2"/><circle cx="96" cy="56" r="2"/></g>
+      </g>
+      <g>
+        <ellipse cx="22" cy="38" rx="6.5" ry="12" fill="#F2C6A8" stroke="#451400" stroke-width="2.8" transform="rotate(-14 22 38)"/>
+        <ellipse cx="20" cy="30" rx="3.6" ry="3.2" fill="#FFF4EC" stroke="#451400" stroke-width="1.4"/>
+        <ellipse cx="36" cy="34" rx="6" ry="11" fill="#F2C6A8" stroke="#451400" stroke-width="2.8"/>
+        <ellipse cx="36" cy="27" rx="3.4" ry="3" fill="#FFF4EC" stroke="#451400" stroke-width="1.4"/>
+        <ellipse cx="49" cy="39" rx="5" ry="9" fill="#F2C6A8" stroke="#451400" stroke-width="2.8" transform="rotate(14 49 39)"/>
+        <ellipse cx="50" cy="33" rx="2.8" ry="2.5" fill="#FFF4EC" stroke="#451400" stroke-width="1.4"/>
+        <path d="M8 50 C12 44 16 48 20 44 C24 48 28 42 32 46 C36 42 40 48 44 44 C48 48 54 46 58 50 Z" fill="#7FB23A" stroke="#451400" stroke-width="2.5" stroke-linejoin="round"/>
+        <path d="M6 50 A27 32 0 0 0 60 50 Z" fill="#F7D06A" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+        <g fill="#D9A23A"><circle cx="20" cy="62" r="2"/><circle cx="34" cy="70" r="2"/><circle cx="46" cy="60" r="2"/></g>
+      </g>
+    </symbol>
+
+    <symbol id="ico-lifeless" viewBox="0 0 120 100" overflow="visible">
+      <g fill="#7FB23A" stroke="#451400" stroke-width="2.5">
+        <circle cx="20" cy="56" r="10"/><circle cx="34" cy="50" r="11"/><circle cx="86" cy="50" r="11"/><circle cx="100" cy="56" r="10"/><circle cx="60" cy="48" r="10"/>
+      </g>
+      <use href="#ico-brain" x="30" y="18" width="54" height="40"/>
+      <g stroke="#451400" stroke-width="2"><circle cx="90" cy="38" r="7" fill="#E8731A"/><circle cx="24" cy="42" r="6" fill="#C62828"/></g>
+      <path d="M4 56 L116 56 C114 80 92 92 60 92 C28 92 6 80 4 56 Z" fill="#fff" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M14 68 C40 74 80 74 106 68" fill="none" stroke="#7FB23A" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 8"/>
+    </symbol>
+
+    <symbol id="ico-carnitas" viewBox="0 0 120 100" overflow="visible">
+      <g transform="rotate(-24 70 34)">
+        <rect x="52" y="28" width="40" height="10" rx="5" fill="#F7F1E6" stroke="#451400" stroke-width="2.8"/>
+        <circle cx="52" cy="28" r="6" fill="#F7F1E6" stroke="#451400" stroke-width="2.8"/><circle cx="52" cy="38" r="6" fill="#F7F1E6" stroke="#451400" stroke-width="2.8"/>
+        <circle cx="92" cy="28" r="6" fill="#F7F1E6" stroke="#451400" stroke-width="2.8"/><circle cx="92" cy="38" r="6" fill="#F7F1E6" stroke="#451400" stroke-width="2.8"/>
+        <rect x="52" y="29.5" width="40" height="7" fill="#F7F1E6"/>
+      </g>
+      <g stroke="#451400" stroke-width="3" stroke-linejoin="round">
+        <path d="M14 78 C10 64 22 56 34 60 C38 50 54 50 58 60 C66 52 82 56 82 66 C94 64 104 72 100 82 C80 90 34 90 14 78 Z" fill="#9C4524"/>
+        <path d="M30 70 L40 64 L50 70 L44 78 Z" fill="#B85A30"/>
+        <path d="M62 68 L74 64 L80 74 L68 78 Z" fill="#7E3418"/>
+      </g>
+      <g fill="none" stroke="#E2A07A" stroke-width="2" stroke-linecap="round"><path d="M22 72 L28 68"/><path d="M56 72 L60 66"/><path d="M86 76 L92 72"/></g>
+    </symbol>
+
+    <symbol id="ico-liver" viewBox="0 0 120 100" overflow="visible">
+      <path d="M12 52 C12 28 50 20 78 26 C104 31 116 46 106 60 C96 74 70 66 56 76 C40 86 12 76 12 52 Z" fill="#8E2433" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <g stroke="#3E0A12" stroke-width="5" stroke-linecap="round"><path d="M32 40 L52 60"/><path d="M50 32 L72 56"/><path d="M70 30 L90 50"/></g>
+      <ellipse cx="34" cy="38" rx="8" ry="4" fill="#fff" opacity=".35" transform="rotate(-20 34 38)"/>
+      <path d="M90 22 C96 14 104 16 104 22 C110 18 114 24 110 28" fill="none" stroke="#E8731A" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ico-grains" viewBox="0 0 120 100" overflow="visible">
+      <path d="M12 80 C14 50 40 34 62 34 C86 34 108 50 110 80 Z" fill="#E2C48C" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <g fill="#B38B4A">
+        <ellipse cx="30" cy="70" rx="3.5" ry="2" transform="rotate(20 30 70)"/><ellipse cx="44" cy="58" rx="3.5" ry="2" transform="rotate(-20 44 58)"/><ellipse cx="58" cy="46" rx="3.5" ry="2"/><ellipse cx="72" cy="56" rx="3.5" ry="2" transform="rotate(30 72 56)"/><ellipse cx="88" cy="66" rx="3.5" ry="2" transform="rotate(-10 88 66)"/><ellipse cx="60" cy="68" rx="3.5" ry="2" transform="rotate(40 60 68)"/><ellipse cx="96" cy="74" rx="3.5" ry="2"/><ellipse cx="22" cy="76" rx="3.5" ry="2"/><ellipse cx="78" cy="44" rx="3.5" ry="2" transform="rotate(-30 78 44)"/><ellipse cx="46" cy="74" rx="3.5" ry="2"/>
+      </g>
+      <path d="M62 34 C62 22 70 14 82 12 C82 24 74 32 62 34 Z" fill="#7FB23A" stroke="#451400" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M63 33 C68 26 72 22 78 17" fill="none" stroke="#451400" stroke-width="1.8" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ico-cup" viewBox="0 0 120 100">
+      <path d="M28 40 L92 40 L85 90 L35 90 Z" fill="#fff" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M38 58 L82 58" stroke="#DCCBB2" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-salsa-red" viewBox="0 0 120 100" overflow="visible">
+      <use href="#ico-cup" width="120" height="100"/>
+      <ellipse cx="60" cy="40" rx="33" ry="9" fill="#C62828" stroke="#451400" stroke-width="3.5"/>
+      <path d="M36 42 C36 52 40 58 42 50 C43 46 42 44 42 43" fill="#C62828" stroke="#451400" stroke-width="2.4" stroke-linejoin="round"/>
+      <g fill="#fff" stroke="#451400" stroke-width="1"><rect x="48" y="35" width="5" height="5" rx="1"/><rect x="66" y="37" width="5" height="5" rx="1"/></g>
+      <g fill="#7FB23A"><rect x="57" y="38" width="4" height="4" rx="1"/><rect x="76" y="35" width="4" height="4" rx="1"/></g>
+    </symbol>
+    <symbol id="ico-salsa-corn" viewBox="0 0 120 100" overflow="visible">
+      <use href="#ico-cup" width="120" height="100"/>
+      <path d="M68 38 L68 20 C68 12 84 12 84 20 L84 38 Z" fill="#E6DED0" stroke="#451400" stroke-width="2.8" stroke-linejoin="round"/>
+      <path d="M72 24 L80 24" stroke="#451400" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="60" cy="40" rx="33" ry="9" fill="#F2C14E" stroke="#451400" stroke-width="3.5"/>
+      <g fill="#FFE08A" stroke="#451400" stroke-width="1"><circle cx="44" cy="40" r="2.6"/><circle cx="52" cy="36" r="2.6"/><circle cx="58" cy="42" r="2.6"/><circle cx="88" cy="40" r="2.6"/><circle cx="66" cy="43" r="2.6"/></g>
+      <g fill="#C62828"><rect x="47" y="42" width="4" height="3" rx="1"/><rect x="78" y="42" width="4" height="3" rx="1"/></g>
+    </symbol>
+    <symbol id="ico-guac" viewBox="0 0 120 100" overflow="visible">
+      <use href="#ico-cup" width="120" height="100"/>
+      <path d="M27 40 C30 28 46 26 52 30 C58 22 76 22 80 30 C88 26 96 32 93 40 Z" fill="#7FB23A" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <ellipse cx="60" cy="40" rx="33" ry="8" fill="#8CC24A" stroke="#451400" stroke-width="3.5"/>
+      <circle cx="62" cy="30" r="10" fill="#fff" stroke="#451400" stroke-width="3"/>
+      <circle cx="64" cy="31" r="5" fill="#E8731A"/><circle cx="65" cy="31" r="2.6" fill="#451400"/>
+      <circle cx="61" cy="27" r="1.5" fill="#fff"/>
+      <path d="M54 23 L52 21 M58 21 L57 18" stroke="#C62828" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ico-chips" viewBox="0 0 120 100" overflow="visible">
+      <g stroke="#451400" stroke-width="2.6" stroke-linejoin="round">
+        <rect x="36" y="10" width="13" height="42" rx="6.5" fill="#F2D7A0" transform="rotate(-14 42 30)"/>
+        <rect x="53" y="4" width="13" height="46" rx="6.5" fill="#F2D7A0"/>
+        <rect x="70" y="10" width="13" height="40" rx="6.5" fill="#F2D7A0" transform="rotate(12 76 30)"/>
+      </g>
+      <g fill="#FFF4EC" stroke="#451400" stroke-width="1.4"><rect x="37" y="12" width="9" height="8" rx="3" transform="rotate(-14 42 30)"/><rect x="55" y="6" width="9" height="8" rx="3"/><rect x="72" y="12" width="9" height="8" rx="3" transform="rotate(12 76 30)"/></g>
+      <path d="M26 40 L94 40 L88 94 L32 94 Z" fill="#C9A473" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M26 40 L32 48 L38 40 L44 48 L50 40 L56 48 L62 40 L68 48 L74 40 L80 48 L86 40 L92 48 L94 40" fill="none" stroke="#451400" stroke-width="2" stroke-linejoin="round"/>
+      <use href="#ico-medallion" x="46" y="56" width="28" height="28"/>
+    </symbol>
+    <symbol id="ico-drink" viewBox="0 0 120 100" overflow="visible">
+      <path d="M66 14 L82 -4" stroke="#451400" stroke-width="8" stroke-linecap="round"/>
+      <path d="M66 14 L82 -4" stroke="#C62828" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M36 20 L84 20 L78 96 L42 96 Z" fill="#CFE6A6" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <path d="M38 40 L82 40 L78 96 L42 96 Z" fill="#A9D46A" opacity=".6"/>
+      <ellipse cx="60" cy="20" rx="26" ry="6" fill="#fff" stroke="#451400" stroke-width="3"/>
+      <g transform="translate(36 26)">
+        <circle r="13" fill="#7FB23A" stroke="#451400" stroke-width="3"/>
+        <circle r="9" fill="#D9EFA8"/>
+        <g stroke="#7FB23A" stroke-width="1.8"><path d="M0 -9 V9"/><path d="M-9 0 H9"/><path d="M-6 -6 L6 6"/><path d="M6 -6 L-6 6"/></g>
+      </g>
+      <g fill="#fff" opacity=".7"><circle cx="64" cy="60" r="3"/><circle cx="58" cy="74" r="2"/><circle cx="68" cy="82" r="2.5"/></g>
+    </symbol>
+
+    <symbol id="ico-tomb" viewBox="0 0 60 70" overflow="visible">
+      <path d="M8 68 L8 26 C8 4 52 4 52 26 L52 68 Z" fill="#E6DED0" stroke="#451400" stroke-width="3.5" stroke-linejoin="round"/>
+      <text x="30" y="34" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="700" font-size="13" fill="#451400">RIP</text>
+      <path d="M18 46 L42 46 M20 54 L40 54" stroke="#BFAF96" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M2 68 L58 68" stroke="#451400" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M6 66 C10 60 14 66 16 62 M44 66 C46 60 50 64 54 60" fill="none" stroke="#7FB23A" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ico-bagline" viewBox="0 0 24 24">
+      <path d="M5 8 H19 L18 21 H6 Z" fill="none" stroke="#451400" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M9 10 V6 a3 3 0 0 1 6 0 V10" fill="none" stroke="#451400" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="ico-hearse" viewBox="0 0 60 40">
+      <path d="M4 28 L4 18 C4 14 8 12 14 12 L32 12 L40 4 L52 4 C56 4 58 8 58 12 L58 28 Z" fill="#451400"/>
+      <rect x="34" y="8" width="16" height="10" rx="2" fill="#E6DED0"/>
+      <path d="M12 16 C18 14 24 14 28 16" stroke="#E6DED0" stroke-width="2" fill="none"/>
+      <circle cx="16" cy="30" r="6" fill="#451400" stroke="#F5EFE6" stroke-width="2"/><circle cx="46" cy="30" r="6" fill="#451400" stroke="#F5EFE6" stroke-width="2"/>
+    </symbol>
+    <symbol id="ico-ghost" viewBox="0 0 40 40">
+      <path d="M8 36 L8 18 C8 6 32 6 32 18 L32 36 L27 32 L22 36 L18 32 L13 36 Z" fill="#fff" stroke="#451400" stroke-width="2.6" stroke-linejoin="round"/>
+      <circle cx="16" cy="19" r="2.6" fill="#451400"/><circle cx="25" cy="19" r="2.6" fill="#451400"/>
+      <ellipse cx="20.5" cy="26" rx="3" ry="2.4" fill="#451400"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="promo" role="region" aria-label="Promotion">
+  <strong>Ghoulrito season.</strong>Show up in costume as a living human, get chased. <a href="#order">Order a Ghoulrito</a>
+</div>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Cryptotle Mexican Grave, home">
+      <svg aria-hidden="true"><use href="#ico-medallion"/></svg>
+      <span class="wordmark"><b>CRYPTOTLE</b><span>MEXICAN GRAVE</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#catering">Catering<small>Feed the Horde</small></a></li>
+      <li><a href="#rewards">Undead Rewards</a></li>
+      <li><a href="#values">Our Values</a></li>
+      <li><a href="#crypts">Find a Crypt</a></li>
+      <li class="nav-order"><a href="#order">Order now</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="bag-link" href="#bag" aria-label="Your bag"><svg aria-hidden="true"><use href="#ico-bagline"/></svg><span class="bag-count" id="bagCount" data-n="0">0</span></a>
+      <a class="btn" href="#order">Order now</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="#451400" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 id="heroTitle">Flesh with Integrity.</h1>
+      <p class="lede">Hand-harvested brains from family-owned morgues, rolled fresh every night in our Carouge crypt. Real ingredients. Nothing revived.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#order">Order now</a>
+        <a class="btn btn-ghost" href="#menu">See the menu</a>
+      </div>
+      <p class="hero-note"><i aria-hidden="true"></i>Now delivering in Geneva, dusk to dawn.</p>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 640 540" role="img" aria-label="A cartoon Burial Bowl topped with a pink brain, a tombstone reading RIP Hunger, and a green zombie hand rising from the dirt">
+        <defs>
+          <clipPath id="handClip"><rect x="420" y="0" width="220" height="478"/></clipPath>
+        </defs>
+        <circle cx="350" cy="250" r="210" fill="#F7D9BE"/>
+        <circle cx="350" cy="250" r="210" fill="none" stroke="#E8731A" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/>
+        <!-- bats -->
+        <g fill="#451400">
+          <path transform="translate(150 70) scale(1.6)" d="M0 6 C4 0 8 0 10 4 C12 2 14 2 15 4 C16 2 18 2 20 4 C22 0 26 0 30 6 C26 5 23 7 22 10 C19 8 17 9 15 12 C13 9 11 8 8 10 C7 7 4 5 0 6 Z"/>
+          <path transform="translate(520 120) scale(1.1) rotate(10)" d="M0 6 C4 0 8 0 10 4 C12 2 14 2 15 4 C16 2 18 2 20 4 C22 0 26 0 30 6 C26 5 23 7 22 10 C19 8 17 9 15 12 C13 9 11 8 8 10 C7 7 4 5 0 6 Z"/>
+        </g>
+        <!-- tombstone -->
+        <g>
+          <path d="M42 484 L42 350 C42 286 176 286 176 350 L176 484 Z" fill="#E6DED0" stroke="#451400" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M58 352 C58 304 160 304 160 352" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/>
+          <text x="109" y="372" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="700" font-size="40" fill="#451400">RIP</text>
+          <text x="109" y="404" text-anchor="middle" font-family="Oswald, sans-serif" font-weight="600" font-size="22" letter-spacing="2" fill="#451400">HUNGER</text>
+          <text x="109" y="428" text-anchor="middle" font-family="Zilla Slab, serif" font-size="14" fill="#6E4A35">last seen: lunch</text>
+          <path d="M150 300 L140 330 L152 346 L142 372" fill="none" stroke="#451400" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <g fill="#7FB23A" stroke="#451400" stroke-width="2"><circle cx="56" cy="470" r="7"/><circle cx="68" cy="476" r="5"/><circle cx="164" cy="460" r="6"/></g>
+        </g>
+        <!-- ground -->
+        <path d="M-4 540 C10 500 50 478 120 470 C220 458 300 460 360 456 C460 450 560 438 612 470 C628 482 638 508 644 540 Z" fill="#6B3A1F" stroke="#451400" stroke-width="5" stroke-linejoin="round"/>
+        <g fill="#451400" opacity=".55"><circle cx="60" cy="505" r="4"/><circle cx="140" cy="520" r="3"/><circle cx="250" cy="500" r="5"/><circle cx="380" cy="515" r="3"/><circle cx="470" cy="498" r="4"/><circle cx="590" cy="512" r="5"/></g>
+        <g fill="none" stroke="#7FB23A" stroke-width="4" stroke-linecap="round">
+          <path d="M20 470 L16 452 M26 469 L28 448 M32 468 L40 454"/>
+          <path d="M210 460 L206 444 M216 460 L220 442"/>
+          <path d="M600 452 L596 434 M606 452 L610 436 M612 454 L622 442"/>
+        </g>
+        <!-- bowl -->
+        <use href="#ico-bowl" x="176" y="196" width="330" height="275"/>
+        <!-- annotation -->
+        <text x="196" y="150" font-family="Gochi Hand, cursive" font-size="27" fill="#A81612" transform="rotate(-7 196 150)">now 100% more brain</text>
+        <path d="M300 160 C320 176 318 196 300 214" fill="none" stroke="#A81612" stroke-width="3" stroke-linecap="round"/>
+        <path d="M292 204 L300 216 L312 208" fill="none" stroke="#A81612" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- hand -->
+        <g clip-path="url(#handClip)">
+          <g class="hand-rise">
+            <g class="hand-wave">
+              <g fill="none" stroke="#451400" stroke-linecap="round">
+                <path d="M548 500 C546 450 540 404 532 362" stroke-width="40"/>
+                <path d="M508 352 L484 330" stroke-width="22"/>
+                <path d="M514 322 L502 282" stroke-width="22"/>
+                <path d="M530 316 L528 272" stroke-width="22"/>
+                <path d="M545 322 L553 282" stroke-width="22"/>
+                <path d="M553 338 L572 308" stroke-width="22"/>
+              </g>
+              <circle cx="530" cy="342" r="31" fill="#451400"/>
+              <g fill="none" stroke="#7FB23A" stroke-linecap="round">
+                <path d="M548 500 C546 450 540 404 532 362" stroke-width="31"/>
+                <path d="M508 352 L484 330" stroke-width="14"/>
+                <path d="M514 322 L502 282" stroke-width="14"/>
+                <path d="M530 316 L528 272" stroke-width="14"/>
+                <path d="M545 322 L553 282" stroke-width="14"/>
+                <path d="M553 338 L572 308" stroke-width="14"/>
+              </g>
+              <circle cx="530" cy="342" r="26" fill="#7FB23A"/>
+              <g fill="none" stroke="#5E8A26" stroke-width="2.5" stroke-linecap="round">
+                <path d="M516 300 L522 302"/><path d="M526 296 L533 296"/><path d="M546 300 L552 302"/>
+                <path d="M520 352 C526 358 536 358 542 352"/>
+              </g>
+              <rect x="532" y="392" width="20" height="14" rx="2" fill="#E6DED0" stroke="#451400" stroke-width="2.5" transform="rotate(-8 542 399)"/>
+              <path d="M536 396 L548 402 M536 402 L548 396" stroke="#451400" stroke-width="1.6" transform="rotate(-8 542 399)"/>
+            </g>
+          </g>
+        </g>
+        <path d="M498 482 C510 462 530 458 548 464 C566 456 588 466 596 484 Z" fill="#6B3A1F" stroke="#451400" stroke-width="5" stroke-linejoin="round"/>
+        <g fill="#6B3A1F" stroke="#451400" stroke-width="3"><circle cx="500" cy="466" r="6"/><circle cx="592" cy="460" r="5"/><circle cx="514" cy="452" r="4"/></g>
+      </svg>
+    </div>
+  </div>
+  <div class="dirt-band" aria-hidden="true"></div>
+</section>
+
+<!-- MENU -->
+<section class="menu section" id="menu" aria-labelledby="menuTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="menuTitle">The menu</h2>
+      <p>Four ways to eat a brain. Every vessel comes with your choice of protein, salsa on the house, and zero judgement.</p>
+    </div>
+    <div class="formats" id="formatCards"></div>
+    <div class="menu-lists">
+      <div>
+        <h3>Proteins</h3>
+        <p class="note">Included with every vessel.</p>
+        <div id="listProteins"></div>
+      </div>
+      <div>
+        <h3>Salsas</h3>
+        <p class="note">Free. Take both. We will not tell.</p>
+        <div id="listSalsas"></div>
+      </div>
+      <div>
+        <h3>Sides and drinks</h3>
+        <p class="note">Yes, Ghoulcamole is extra.</p>
+        <div id="listSides"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section class="builder section" id="order" aria-labelledby="orderTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="orderTitle">Build your bowl</h2>
+      <p>Walk the line. Point at things. We scoop them. It is the assembly line you know, staffed by people who are mostly fine.</p>
+    </div>
+    <div class="build-grid">
+      <form id="builder" novalidate>
+        <div class="step">
+          <div class="step-h"><span class="step-n">1</span><h3>Pick a vessel</h3><small>Required, pick one</small></div>
+          <div class="opts" id="optFormat"></div>
+        </div>
+        <div class="step">
+          <div class="step-h"><span class="step-n">2</span><h3>Pick a protein</h3><small>Required, included</small></div>
+          <div class="opts" id="optProtein"></div>
+        </div>
+        <div class="step">
+          <div class="step-h"><span class="step-n">3</span><h3>Add salsa</h3><small>Free, pick any</small></div>
+          <div class="opts" id="optSalsa"></div>
+        </div>
+        <div class="step">
+          <div class="step-h"><span class="step-n">4</span><h3>Sides and drinks</h3><small>Optional</small></div>
+          <div class="opts" id="optSides"></div>
+        </div>
+        <div class="build-bar">
+          <div class="sum" aria-live="polite"><b id="buildPrice">CHF 0.00</b><span id="buildSum">Pick a vessel and a protein to start.</span></div>
+          <button class="btn" type="submit" id="addBtn" disabled>Add to bag</button>
+        </div>
+      </form>
+
+      <aside class="bag" id="bag" aria-labelledby="bagTitle">
+        <h3 id="bagTitle">Your bag <svg aria-hidden="true"><use href="#ico-bowl"/></svg></h3>
+        <p class="bag-empty" id="bagEmpty">Your bag is empty, like a skull after lunch. Build something on the left and add it here.</p>
+        <ul class="bag-list" id="bagList" aria-live="polite"></ul>
+        <div class="bag-total"><span>Subtotal</span><span id="bagTotal">CHF 0.00</span></div>
+        <button class="btn btn-block" id="checkoutBtn" disabled>Checkout</button>
+        <p class="bag-fine">Delivery fee added at checkout. Points added on arrival.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section class="catering" id="catering" aria-labelledby="catTitle">
+  <div class="wrap cat-grid">
+    <svg viewBox="0 0 180 120" aria-hidden="true">
+      <use href="#ico-tomb" x="0" y="34" width="60" height="70"/>
+      <use href="#ico-tomb" x="58" y="14" width="70" height="82"/>
+      <use href="#ico-tomb" x="124" y="40" width="54" height="63"/>
+      <path d="M0 104 L180 104" stroke="#451400" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h2 id="catTitle">Feed the Horde</h2>
+      <p>Brain bars for 10 to 10,000. Office parties, wakes, small apocalypses. Minimum order: one outbreak. We bring the sneeze guard, you bring the guests.</p>
+    </div>
+    <a class="btn btn-ghost" href="#order">Plan catering</a>
+  </div>
+</section>
+
+<!-- 206 -->
+<section class="bones section" id="ingredients" aria-labelledby="bonesTitle">
+  <div class="wrap bones-grid">
+    <div>
+      <span class="big206" aria-hidden="true">206</span>
+      <h2 id="bonesTitle">real ingredients.</h2>
+      <p class="lede">Every one of them grown in a real human, then responsibly sourced when that human was done with it. No fillers. No artificial bones. Nothing you cannot pronounce, except maybe hyoid.</p>
+      <span class="hand">Counted twice. Ossicles are tiny.</span>
+    </div>
+    <div class="facts" role="group" aria-label="Ingredient facts">
+      <h3>Ingredient Facts</h3>
+      <div class="serv"><span>Serving size: 1 adult human</span><span>Servings: depends who asks</span></div>
+      <ul id="boneList"></ul>
+      <div class="tot"><span>Total ingredients</span><span id="boneTotal">206</span></div>
+      <p class="fine">Contains: people. May contain traces of titanium hips, dental fillings and unpaid parking fines. Prepared in a kitchen that also handles vampires.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REWARDS -->
+<section class="rewards section" id="rewards" aria-labelledby="rwTitle">
+  <div class="wrap rw-grid">
+    <div>
+      <p class="kicker">Undead Rewards</p>
+      <h2 id="rwTitle">The faster way to free brains.</h2>
+      <p class="tag">Earn points. Lose limbs.</p>
+      <ul class="perks">
+        <li><svg aria-hidden="true"><use href="#ico-brain"/></svg><div><b>10 points per franc</b>Points never expire. Neither do you.</div></li>
+        <li><svg aria-hidden="true"><use href="#ico-guac"/></svg><div><b>Free Ghoulcamole on your deathday</b>Celebrate the day you turned. We will sing, badly.</div></li>
+        <li><svg aria-hidden="true"><use href="#ico-tomb"/></svg><div><b>First dibs on the Ghoulrito</b>Members get seasonal drops 24 hours before the living notice.</div></li>
+      </ul>
+      <button class="btn" id="joinBtn" type="button">Join now</button><span class="rw-joined" id="joinedMsg" aria-live="polite"></span>
+    </div>
+    <div class="card-wrap" aria-hidden="true">
+      <div class="rcard">
+        <div class="top"><svg><use href="#ico-medallion"/></svg><div><b>UNDEAD REWARDS</b><span>MEMBER SINCE FOREVER</span></div></div>
+        <div class="pts">6,660<small>PTS</small></div>
+        <div class="bar"><i></i></div>
+        <div class="meta"><span>Patient Zero</span><span>340 pts to a free Brainrito</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values section" id="values" aria-labelledby="valTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="valTitle">Our values</h2>
+      <p>Flesh with Integrity is not a slogan. It is a supply chain.</p>
+    </div>
+
+    <div class="val-feature">
+      <div>
+        <h3>Ethical sourcing from our partner morgue network</h3>
+        <p>We partner with independent, family-run morgues and funeral homes whose owners are ready to rest. They get a fair price and a dignified handover. We get a reliable cold chain. Everybody rests easy.</p>
+      </div>
+      <div>
+        <div class="tombs" aria-hidden="true">
+          <svg viewBox="0 0 60 70"><use href="#ico-tomb"/></svg>
+          <svg viewBox="0 0 60 70"><use href="#ico-tomb"/></svg>
+          <svg viewBox="0 0 60 70"><use href="#ico-tomb"/></svg>
+          <svg viewBox="0 0 60 70"><use href="#ico-tomb"/></svg>
+          <svg viewBox="0 0 60 70"><use href="#ico-tomb"/></svg>
+          <svg viewBox="0 0 60 70"><use href="#ico-tomb"/></svg>
+          <svg viewBox="0 0 60 70"><path d="M8 68 L8 26 C8 4 52 4 52 26 L52 68 Z" fill="none" stroke="#A81612" stroke-width="3" stroke-dasharray="6 5"/><path d="M30 28 V48 M20 38 H40" stroke="#A81612" stroke-width="4" stroke-linecap="round"/></svg>
+        </div>
+        <p class="tombs-cap">Proudly sourced from 6 family-owned morgues (and counting)</p>
+      </div>
+    </div>
+
+    <div class="val-row">
+      <div class="val val-bfi">
+        <svg class="gauge" viewBox="0 0 220 120" role="img" aria-label="Brain Freshness Index gauge reading 9.6 out of 10">
+          <path d="M20 110 A90 90 0 0 1 200 110" fill="none" stroke="#6B3A1F" stroke-width="18" stroke-linecap="round"/>
+          <path d="M20 110 A90 90 0 0 1 56 38" fill="none" stroke="#A81612" stroke-width="18" stroke-linecap="round"/>
+          <path d="M70 30 A90 90 0 0 1 150 30" fill="none" stroke="#E8731A" stroke-width="18"/>
+          <path d="M164 38 A90 90 0 0 1 200 110" fill="none" stroke="#7FB23A" stroke-width="18" stroke-linecap="round"/>
+          <g transform="rotate(78 110 110)"><path d="M110 110 L110 34" stroke="#F5EFE6" stroke-width="5" stroke-linecap="round"/></g>
+          <circle cx="110" cy="110" r="10" fill="#F5EFE6"/>
+        </svg>
+        <p class="bfi-read">9.6<small>/ 10 BFI</small></p>
+        <h3>Brain Freshness Index</h3>
+        <p>Every brain is scored at harvest for firmness, colour and residual opinions. Anything under 8.0 becomes stock.</p>
+      </div>
+      <div class="val">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <circle cx="40" cy="40" r="36" fill="#fff" stroke="#451400" stroke-width="3"/>
+          <circle cx="40" cy="40" r="29" fill="#A81612"/>
+          <path d="M34 24 H46 V34 H56 V46 H46 V56 H34 V46 H24 V34 H34 Z" fill="#fff"/>
+          <g fill="#E8731A"><path d="M8 52 L4 70 L16 62 Z"/><path d="M72 52 L76 70 L64 62 Z"/></g>
+        </svg>
+        <h3>Swiss-certified provenance</h3>
+        <p>Traceable from cradle to crypt. Every portion ships with a serial number, a certificate and a tiny flag.</p>
+      </div>
+      <div class="val">
+        <svg viewBox="0 0 80 80" aria-hidden="true">
+          <path d="M6 40 C6 20 22 8 40 8 L40 72 C22 72 6 60 6 40 Z" fill="#7FB23A" stroke="#451400" stroke-width="3"/>
+          <path d="M40 8 C58 8 74 20 74 40 C74 60 58 72 40 72 Z" fill="#E6DED0" stroke="#451400" stroke-width="3"/>
+          <circle cx="24" cy="34" r="4" fill="#451400"/><circle cx="56" cy="34" r="4" fill="#A81612"/>
+          <path d="M16 52 C22 48 30 52 36 50" stroke="#451400" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M44 50 H66" stroke="#451400" stroke-width="3" stroke-linecap="round"/>
+          <path d="M48 50 L51 58 L54 50 M58 50 L61 58 L64 50" fill="#fff" stroke="#451400" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+        <h3>Swiss neutrality</h3>
+        <p>We serve zombies and vampires alike. Werewolves by appointment, full moons excluded.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRYPTS -->
+<section class="crypts section" id="crypts" aria-labelledby="cryptTitle">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="cryptTitle">Find a crypt</h2>
+      <p>One ghost kitchen open in Carouge. More rising across Europe as soon as the paperwork stops screaming.</p>
+    </div>
+    <div class="crypt-grid">
+      <div>
+        <form class="search" id="cryptSearch" role="search">
+          <label class="sr-only" for="cryptQ">Search by city or postcode</label>
+          <input id="cryptQ" type="search" placeholder="City or postcode" autocomplete="off">
+          <button class="btn btn-sm" type="submit">Search</button>
+        </form>
+        <ul class="crypt-list" id="cryptList"></ul>
+      </div>
+      <div class="map-box">
+        <svg viewBox="0 0 600 420" id="map" role="img" aria-label="Stylised map of Europe with a pin for each crypt">
+          <path d="M0 0 H600 V420 H0 Z" fill="#DDE9EF"/>
+          <g fill="none" stroke="#C3D6E0" stroke-width="2"><path d="M0 60 C100 50 200 70 300 56"/><path d="M20 160 C80 150 120 170 180 158"/><path d="M0 330 C60 320 120 340 180 330"/></g>
+          <path d="M604 104 C540 116 486 146 426 156 C372 166 334 186 302 208 C274 228 252 248 228 258 C208 268 194 282 196 302 C206 322 188 342 198 362 C208 386 192 402 200 424 L604 424 Z" fill="#F5EFE6" stroke="#451400" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M140 72 C156 60 176 66 176 82 C184 98 172 112 182 128 C196 146 214 168 220 196 C226 220 214 240 196 246 C176 252 160 240 150 230 C136 214 158 200 150 184 C140 166 124 154 132 136 C140 118 126 98 140 72 Z" fill="#F5EFE6" stroke="#451400" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M96 130 C110 124 124 134 120 150 C116 166 98 168 92 156 C86 146 88 134 96 130 Z" fill="#F5EFE6" stroke="#451400" stroke-width="3"/>
+                    <g font-family="Gochi Hand, cursive" font-size="20" fill="#9A7A66"><text x="400" y="404">the continent</text><text x="14" y="300" font-size="18">the Channel, roughly</text></g>
+          <g id="pins"></g>
+        </svg>
+        <span class="map-cap">Not to scale. Not even close.</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top" aria-label="Cryptotle Mexican Grave, back to top">
+          <svg aria-hidden="true"><use href="#ico-medallion"/></svg>
+          <span class="wordmark"><b>CRYPTOTLE</b><span>MEXICAN GRAVE</span></span>
+        </a>
+        <p>Flesh with Integrity. Lime changes everything. Quicklime more so.</p>
+        <div class="apps">
+          <a class="appb" href="#rewards" aria-label="Download on the Crypt Store (parody badge)"><span class="gl tomb" aria-hidden="true"></span><span><small>Dig it up on the</small><b>Crypt Store</b></span></a>
+          <a class="appb" href="#rewards" aria-label="Get it on Ghoul Play (parody badge)"><span class="gl play" aria-hidden="true"></span><span><small>Get it on</small><b>Ghoul Play</b></span></a>
+        </div>
+      </div>
+      <div>
+        <h4>Eat</h4>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#order">Build your bowl</a></li>
+          <li><a href="#catering">Feed the Horde</a></li>
+          <li><a href="#ingredients">206 real ingredients</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Join</h4>
+        <ul>
+          <li><a href="#rewards">Undead Rewards</a></li>
+          <li><a href="#values">Careers<small>Pulse optional</small></a></li>
+          <li><a href="#values">Franchise a crypt<small>Bring your own cold chain</small></a></li>
+          <li><a href="#values">Investors<small>Raising CHF 6.66M seed</small></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal-ish</h4>
+        <ul>
+          <li><a href="#ingredients">Allergens<small>Contains: people</small></a></li>
+          <li><a href="#values">Privacy<small>We only want your brain</small></a></li>
+          <li><a href="#values">Terms of unlife</a></li>
+          <li><a href="#crypts">Find a crypt</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p class="disclaimer"><b>Parody made for a Halloween hackathon by Dave &amp; Sam, Geneva.</b> Not affiliated with Chipotle Mexican Grill. No humans were harmed. Probably.</p>
+      <span>&copy; 2026 Cryptotle Mexican Grave</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Checkout modal -->
+<div class="modal-bg" id="modalBg" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" id="modal">
+    <button class="x" type="button" id="modalClose" aria-label="Close checkout">&times;</button>
+    <div id="checkoutView">
+      <h2 id="modalTitle">Checkout</h2>
+      <form id="checkoutForm" novalidate>
+        <fieldset>
+          <legend>Delivery partner</legend>
+          <div class="partners">
+            <div class="partner">
+              <input type="radio" name="partner" id="pGhoul" value="ghouldash" checked>
+              <label for="pGhoul"><b><svg aria-hidden="true"><use href="#ico-ghost"/></svg>GhoulDash</b><span>Fast-ish. Rider may be translucent.</span><em>Delivery CHF 2.90</em></label>
+            </div>
+            <div class="partner">
+              <input type="radio" name="partner" id="pHearse" value="hearse">
+              <label for="pHearse"><b><svg aria-hidden="true" viewBox="0 0 60 40"><use href="#ico-hearse"/></svg>Hearse Express</b><span>Arrives in style, lying down.</span><em>Delivery CHF 4.90</em></label>
+            </div>
+          </div>
+        </fieldset>
+        <label class="field"><span>Deliver to</span><input id="addr" type="text" placeholder="Crypt, plot or postcode" autocomplete="off"></label>
+        <label class="field"><span>Drop-off</span>
+          <select id="dropoff">
+            <option>Leave at the gate</option>
+            <option>Slide it under the lid</option>
+            <option>Hand it to me (risky)</option>
+          </select>
+        </label>
+        <div class="summary" id="coSummary"></div>
+        <p class="err" id="coErr" role="alert"></p>
+        <div class="modal-actions"><button class="btn btn-block" type="submit" id="placeBtn">Place order</button></div>
+      </form>
+    </div>
+    <div id="confirmView" class="confirm" hidden>
+      <svg class="big" viewBox="0 0 200 150" aria-hidden="true">
+        <path d="M0 132 C50 120 150 120 200 132 L200 150 L0 150 Z" fill="#6B3A1F" stroke="#451400" stroke-width="4"/>
+        <use href="#ico-bowl" x="20" y="38" width="112" height="94"/>
+        <g transform="translate(148 98)"><use href="#ico-hearse" width="48" height="32"/></g>
+        <g fill="none" stroke="#E8731A" stroke-width="3" stroke-linecap="round"><path d="M146 108 L136 108"/><path d="M146 118 L140 118"/></g>
+      </svg>
+      <h2 id="confirmTitle" tabindex="-1">Order placed</h2>
+      <p class="eta">Your order is shambling toward you.<br>ETA: <span>eventually.</span></p>
+      <p id="confirmDetail"></p>
+      <div class="track" aria-label="Order progress">
+        <div class="bar"><i id="trackBar"></i></div>
+        <ol id="trackSteps"><li>Harvested</li><li>Wrapped</li><li>Shambling</li><li>Arrived</li></ol>
+      </div>
+      <div class="modal-actions"><button class="btn btn-block" type="button" id="doneBtn">Done</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+  var FORMATS = [
+    {id:"brainrito", name:"Brainrito", price:13.90, ico:"ico-burrito", aka:"our Ghoulrito this season", desc:"A warm flour tortilla swaddling your protein, rice, beans and salsa. Mummified to order."},
+    {id:"burial", name:"Burial Bowl", price:14.90, ico:"ico-bowl", aka:"the bestseller", desc:"Everything in a Brainrito, laid to rest in a bowl. Lid included. Closed casket."},
+    {id:"toecos", name:"Toecos", price:12.90, ico:"ico-tacos", aka:"three shells, ten little piggies", desc:"Crispy corn or soft flour shells with your protein of choice. This little piggy went to market."},
+    {id:"lifeless", name:"Lifeless Style Bowl", price:15.90, ico:"ico-lifeless", aka:"formerly Lifestyle Bowl", desc:"Greens, double protein, no rice, no pulse. For the undead who are watching their figure fall off."}
+  ];
+  var PROTEINS = [
+    {id:"brainbacoa", name:"Brainbacoa", ico:"ico-brain", sig:true, desc:"Slow-braised cerebrum, chipotle-adobo. Tastes like thinking."},
+    {id:"carnage", name:"Carnage-itas", ico:"ico-carnitas", desc:"Pulled shoulder, crispy edges. Somebody's shoulder, anyway."},
+    {id:"liver", name:"Liver Asada", ico:"ico-liver", desc:"Flame-grilled, citrus-marinated, still a little judgemental."},
+    {id:"graaains", name:"Graaains", ico:"ico-grains", veg:true, desc:"Plant-based brown rice and quinoa for the vegan undead. Graaaains."}
+  ];
+  var SALSAS = [
+    {id:"bloody", name:"Bloody Mild", ico:"ico-salsa-red", price:0, desc:"Fresh tomato, onion, coriander and a splash of type O."},
+    {id:"crypt", name:"Hot Crypt Corn", ico:"ico-salsa-corn", price:0, desc:"Roasted corn and poblano. Rises again every time."}
+  ];
+  var SIDES = [
+    {id:"guac", name:"Ghoulcamole", ico:"ico-guac", price:3.10, plus:true, desc:"Hand-mashed avocado, lime and one watchful eye."},
+    {id:"chips", name:"Finger Chips", ico:"ico-chips", price:3.90, desc:"Crispy, salted, lime. Lime changes everything. Quicklime more so."},
+    {id:"agua", name:"Plasma Lime Agua Fresca", ico:"ico-drink", price:4.50, desc:"Fresh lime, cane sugar, faint metallic finish."}
+  ];
+  var PARTNERS = {ghouldash:{name:"GhoulDash", fee:2.90}, hearse:{name:"Hearse Express", fee:4.90}};
+  var BONES = [["Phalanges",56],["Vertebrae",26],["Ribs",24],["Skull",22],["Carpals",16],["Tarsals",14],["Metacarpals",10],["Metatarsals",10],["Ossicles",6],["Clavicles",2],["Scapulae",2],["Humeri",2],["Radii",2],["Ulnae",2],["Hip bones",2],["Femurs",2],["Kneecaps",2],["Tibiae",2],["Fibulae",2],["Sternum",1],["Hyoid",1]];
+  var CRYPTS = [
+    {id:"carouge", name:"Carouge, Geneva", open:true, x:323, y:370, q:"carouge geneva geneve genf 1227 switzerland suisse ch", addr:"Rue du Dernier Repos 13, 1227 Carouge", info:"Pilot ghost kitchen. Open dusk to dawn. Delivery only, via GhoulDash and Hearse Express."},
+    {id:"paris", name:"Paris, Les Catacombes", x:262, y:300, q:"paris france 75014", info:"Coming soon. Six million regulars already in residence."},
+    {id:"london", name:"London, Highgate", x:198, y:222, q:"london highgate uk england n6", info:"Coming soon. Planning permission pending, ominously."},
+    {id:"edinburgh", name:"Edinburgh, Greyfriars", x:150, y:110, q:"edinburgh greyfriars scotland uk eh1", info:"Coming soon. Bring a jumper."},
+    {id:"prague", name:"Prague, Sedlec", x:488, y:262, q:"prague praha sedlec kutna hora czech", info:"Coming soon. The interior designer is a natural."},
+    {id:"vienna", name:"Vienna, Zentralfriedhof", x:527, y:314, q:"vienna wien zentralfriedhof austria 1110", info:"Coming soon. Waltzing optional, shambling mandatory."}
+  ];
+
+  function chf(n){ return "CHF " + n.toFixed(2); }
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function ico(id, vb){ return '<svg viewBox="'+(vb||"0 0 120 100")+'" aria-hidden="true"><use href="#'+id+'"/></svg>'; }
+  function find(list, id){ for (var i=0;i<list.length;i++){ if (list[i].id===id) return list[i]; } return null; }
+
+  /* Menu */
+  $("formatCards").innerHTML = FORMATS.map(function(f){
+    return '<article class="format"><div class="art">'+ico(f.ico)+'</div>'+
+      '<h3>'+esc(f.name)+'</h3><p class="aka">'+esc(f.aka)+'</p><p>'+esc(f.desc)+'</p>'+
+      '<div class="row"><span class="price">'+chf(f.price)+'</span><a class="btn btn-sm" href="#order" data-pick="'+f.id+'">Order</a></div></article>';
+  }).join("");
+  function mi(item, priceTxt, badge){
+    return '<div class="mi">'+ico(item.ico)+'<div><b>'+esc(item.name)+'</b>'+(badge||"")+'<span>'+esc(item.desc)+'</span></div><em>'+priceTxt+'</em></div>';
+  }
+  $("listProteins").innerHTML = PROTEINS.map(function(p){
+    var b = p.sig ? '<span class="badge">Signature</span>' : (p.veg ? '<span class="badge badge-green">Plant-based</span>' : "");
+    return mi(p, "Included", b);
+  }).join("");
+  $("listSalsas").innerHTML = SALSAS.map(function(s){ return mi(s, "Free"); }).join("");
+  $("listSides").innerHTML = SIDES.map(function(s){ return mi(s, (s.plus?"+":"")+chf(s.price)); }).join("");
+
+  /* Builder options */
+  function opts(container, list, type, name, priceFn){
+    $(container).innerHTML = list.map(function(o){
+      var id = name+"-"+o.id;
+      return '<div class="opt"><input type="'+type+'" name="'+name+'" id="'+id+'" value="'+o.id+'">'+
+        '<label for="'+id+'">'+ico(o.ico)+'<span class="on">'+esc(o.name)+'</span><span class="op">'+priceFn(o)+'</span></label></div>';
+    }).join("");
+  }
+  opts("optFormat", FORMATS, "radio", "format", function(o){ return chf(o.price); });
+  opts("optProtein", PROTEINS, "radio", "protein", function(o){ return o.sig ? "Signature" : (o.veg ? "Plant-based" : "Included"); });
+  opts("optSalsa", SALSAS, "checkbox", "salsa", function(){ return "Free"; });
+  opts("optSides", SIDES, "checkbox", "side", function(o){ return "+"+chf(o.price); });
+
+  var form = $("builder");
+  function current(){
+    var f = form.querySelector('input[name="format"]:checked');
+    var p = form.querySelector('input[name="protein"]:checked');
+    var s = Array.prototype.map.call(form.querySelectorAll('input[name="salsa"]:checked'), function(i){ return i.value; });
+    var x = Array.prototype.map.call(form.querySelectorAll('input[name="side"]:checked'), function(i){ return i.value; });
+    return {format: f ? f.value : null, protein: p ? p.value : null, salsas: s, sides: x};
+  }
+  function linePrice(b){
+    var f = find(FORMATS, b.format); var t = f ? f.price : 0;
+    b.sides.forEach(function(id){ t += find(SIDES, id).price; });
+    return Math.round(t*100)/100;
+  }
+  function describe(b){
+    var parts = [];
+    if (b.protein) parts.push(find(PROTEINS, b.protein).name);
+    b.salsas.forEach(function(id){ parts.push(find(SALSAS, id).name); });
+    b.sides.forEach(function(id){ parts.push(find(SIDES, id).name); });
+    return parts.join(", ");
+  }
+  function updateBuild(){
+    var b = current();
+    var ready = b.format && b.protein;
+    $("addBtn").disabled = !ready;
+    $("buildPrice").textContent = chf(linePrice(b));
+    if (!b.format && !b.protein) $("buildSum").textContent = "Pick a vessel and a protein to start.";
+    else if (!b.format) $("buildSum").textContent = describe(b) + ". Now pick a vessel.";
+    else if (!b.protein) $("buildSum").textContent = find(FORMATS, b.format).name + ". Now pick a protein.";
+    else $("buildSum").textContent = find(FORMATS, b.format).name + " with " + describe(b) + ".";
+  }
+  form.addEventListener("change", updateBuild);
+
+  /* Bag */
+  var bag = [], seq = 0;
+  function bagTotal(){ return bag.reduce(function(t, l){ return t + linePrice(l)*l.qty; }, 0); }
+  function bagQty(){ return bag.reduce(function(t, l){ return t + l.qty; }, 0); }
+  function renderBag(){
+    var list = $("bagList");
+    list.innerHTML = bag.map(function(l){
+      return '<li class="bag-item" data-id="'+l.id+'"><b>'+esc(find(FORMATS,l.format).name)+'</b><span class="lp">'+chf(linePrice(l)*l.qty)+'</span>'+
+        '<span class="det">'+esc(describe(l))+'</span>'+
+        '<div class="qty"><button type="button" data-act="dec" aria-label="One fewer">&minus;</button><span>'+l.qty+'</span><button type="button" data-act="inc" aria-label="One more">+</button><button type="button" class="rm" data-act="rm">Remove</button></div></li>';
+    }).join("");
+    $("bagEmpty").hidden = bag.length > 0;
+    $("bagTotal").textContent = chf(bagTotal());
+    $("checkoutBtn").disabled = bag.length === 0;
+    var n = bagQty(); var c = $("bagCount"); c.textContent = n; c.setAttribute("data-n", n);
+  }
+  $("bagList").addEventListener("click", function(e){
+    var btn = e.target.closest("button[data-act]"); if (!btn) return;
+    var id = +btn.closest(".bag-item").getAttribute("data-id");
+    for (var i=0;i<bag.length;i++){
+      if (bag[i].id === id){
+        var a = btn.getAttribute("data-act");
+        if (a === "inc") bag[i].qty++;
+        else if (a === "dec") bag[i].qty--;
+        if (a === "rm" || bag[i].qty <= 0) bag.splice(i,1);
+        break;
+      }
+    }
+    renderBag();
+  });
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var b = current(); if (!b.format || !b.protein) return;
+    b.id = ++seq; b.qty = 1; bag.push(b);
+    renderBag();
+    toast(find(FORMATS, b.format).name + " added to bag");
+    form.reset(); updateBuild();
+  });
+
+  var toastT;
+  function toast(msg){
+    var t = $("toast"); t.textContent = msg; t.classList.add("show");
+    clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove("show"); }, 2200);
+  }
+
+  /* Menu card order buttons preselect format */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("[data-pick]"); if (!a) return;
+    var r = $("format-" + a.getAttribute("data-pick")); if (r){ r.checked = true; updateBuild(); }
+  });
+
+  /* Checkout modal */
+  var bg = $("modalBg"), lastFocus = null;
+  function partner(){ return PARTNERS[document.querySelector('input[name="partner"]:checked').value]; }
+  function renderSummary(){
+    var p = partner(), sub = bagTotal();
+    $("coSummary").innerHTML =
+      '<div><span>'+bagQty()+' item'+(bagQty()===1?"":"s")+'</span><span>'+chf(sub)+'</span></div>'+
+      '<div><span>'+esc(p.name)+' delivery</span><span>'+chf(p.fee)+'</span></div>'+
+      '<div class="t"><span>Total</span><span>'+chf(sub+p.fee)+'</span></div>';
+  }
+  function openModal(){
+    if (!bag.length) return;
+    lastFocus = document.activeElement;
+    $("checkoutView").hidden = false; $("confirmView").hidden = true; $("coErr").textContent = "";
+    renderSummary();
+    bg.classList.add("open"); bg.setAttribute("aria-hidden","false");
+    document.body.style.overflow = "hidden";
+    setTimeout(function(){ document.querySelector('input[name="partner"]:checked').focus(); }, 30);
+  }
+  function closeModal(){
+    bg.classList.remove("open"); bg.setAttribute("aria-hidden","true");
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  $("checkoutBtn").addEventListener("click", openModal);
+  $("modalClose").addEventListener("click", closeModal);
+  bg.addEventListener("click", function(e){ if (e.target === bg) closeModal(); });
+  document.addEventListener("keydown", function(e){
+    if (!bg.classList.contains("open")) return;
+    if (e.key === "Escape") { closeModal(); return; }
+    if (e.key === "Tab"){
+      var f = Array.prototype.filter.call($("modal").querySelectorAll("button, input, select, [tabindex]"), function(el){ return !el.disabled && el.offsetParent !== null && el.tabIndex >= 0; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length-1];
+      if (e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  });
+  $("checkoutForm").addEventListener("change", renderSummary);
+  $("checkoutForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var addr = $("addr").value.trim();
+    if (!addr){ $("coErr").textContent = "Add a delivery address. Even zombies need a plot number."; $("addr").focus(); return; }
+    var p = partner(), total = bagTotal() + p.fee;
+    var num = "CR-" + (6600 + Math.floor(Math.random()*66));
+    $("confirmDetail").innerHTML = "Order <b>"+num+"</b>, "+bagQty()+" item"+(bagQty()===1?"":"s")+", "+chf(total)+". "+esc(p.name)+" is heading to "+esc(addr)+". You earned <b>"+Math.round(total*10)+" Undead Rewards points</b>.";
+    $("checkoutView").hidden = true; $("confirmView").hidden = false;
+    var bar = $("trackBar"), steps = $("trackSteps").children;
+    bar.style.transition = "none"; bar.style.width = "0"; void bar.offsetWidth; bar.style.transition = "";
+    for (var i=0;i<steps.length;i++) steps[i].className = "";
+    steps[0].className = "done";
+    setTimeout(function(){ bar.style.width = "64%"; }, 60);
+    setTimeout(function(){ steps[1].className = "done"; }, 1500);
+    setTimeout(function(){ steps[2].className = "done"; }, 3200);
+    $("confirmTitle").focus();
+    bag = []; renderBag();
+  });
+  $("doneBtn").addEventListener("click", closeModal);
+
+  /* Rewards join */
+  $("joinBtn").addEventListener("click", function(){
+    $("joinedMsg").textContent = "You're in. Forever. Literally.";
+    this.textContent = "Joined";
+  });
+
+  /* 206 */
+  $("boneList").innerHTML = BONES.map(function(b){ return '<li><span>'+b[0]+'</span><b>'+b[1]+'</b></li>'; }).join("");
+  $("boneTotal").textContent = BONES.reduce(function(t,b){ return t+b[1]; }, 0);
+
+  /* Crypts */
+  var pinsG = $("pins"), NS = "http://www.w3.org/2000/svg";
+  CRYPTS.forEach(function(c){
+    var g = document.createElementNS(NS, "g");
+    g.setAttribute("class", "pin" + (c.open ? " active" : ""));
+    g.setAttribute("data-id", c.id);
+    var col = c.open ? "#A81612" : "#6E4A35";
+    g.innerHTML =
+      '<circle class="pin-ring" cx="'+c.x+'" cy="'+(c.y-28)+'" r="18" fill="none" stroke="'+col+'" stroke-width="3"/>'+
+      '<path d="M'+c.x+' '+c.y+' C'+(c.x-4)+' '+(c.y-10)+' '+(c.x-14)+' '+(c.y-16)+' '+(c.x-14)+' '+(c.y-28)+' A14 14 0 1 1 '+(c.x+14)+' '+(c.y-28)+' C'+(c.x+14)+' '+(c.y-16)+' '+(c.x+4)+' '+(c.y-10)+' '+c.x+' '+c.y+' Z" fill="'+col+'" stroke="#451400" stroke-width="2.5"/>'+
+      '<circle cx="'+c.x+'" cy="'+(c.y-28)+'" r="5.5" fill="'+(c.open ? "#F49AB4" : "#E6DED0")+'"/>'+
+      '<text x="'+(c.x>440 ? c.x-20 : c.x+20)+'" y="'+(c.y-30)+'" text-anchor="'+(c.x>440?"end":"start")+'" font-family="Oswald, sans-serif" font-weight="600" font-size="17" fill="#451400">'+esc(c.name.split(",")[0])+(c.open?"":" (soon)")+'</text>';
+    g.addEventListener("click", function(){ select(c.id); });
+    pinsG.appendChild(g);
+  });
+  function renderCrypts(q){
+    q = (q||"").trim().toLowerCase();
+    var list = CRYPTS.filter(function(c){ return !q || c.q.indexOf(q) > -1 || c.name.toLowerCase().indexOf(q) > -1; });
+    if (!list.length){
+      $("cryptList").innerHTML = '<li class="no-crypt">No crypts near "'+esc(q)+'" yet. The horde is coming. Try Geneva or Paris.</li>';
+      return;
+    }
+    $("cryptList").innerHTML = list.map(function(c){
+      return '<li><button type="button" class="crypt'+(c.open?" active":"")+'" data-id="'+c.id+'"><span class="st'+(c.open?" open":"")+'">'+(c.open?"Open now":"Coming soon")+'</span><b>'+esc(c.name)+'</b>'+
+        (c.addr ? '<span>'+esc(c.addr)+'</span>' : "")+'<span>'+esc(c.info)+'</span></button>'+
+        (c.open ? '<a class="btn btn-sm crypt-open-cta" href="#order">Order from here</a>' : "")+'</li>';
+    }).join("");
+    if (list.length === 1) select(list[0].id);
+  }
+  function select(id){
+    Array.prototype.forEach.call(document.querySelectorAll(".crypt"), function(el){ el.classList.toggle("active", el.getAttribute("data-id") === id); });
+    Array.prototype.forEach.call(pinsG.children, function(el){ el.classList.toggle("active", el.getAttribute("data-id") === id); });
+  }
+  $("cryptList").addEventListener("click", function(e){ var b = e.target.closest(".crypt"); if (b) select(b.getAttribute("data-id")); });
+  $("cryptSearch").addEventListener("submit", function(e){ e.preventDefault(); renderCrypts($("cryptQ").value); });
+  $("cryptQ").addEventListener("input", function(){ renderCrypts(this.value); });
+  renderCrypts("");
+
+  /* Mobile nav */
+  var tog = $("menuToggle"), links = $("navLinks");
+  tog.addEventListener("click", function(){
+    var o = links.classList.toggle("open");
+    tog.setAttribute("aria-expanded", o ? "true" : "false");
+    tog.setAttribute("aria-label", o ? "Close menu" : "Open menu");
+  });
+  links.addEventListener("click", function(e){ if (e.target.closest("a")){ links.classList.remove("open"); tog.setAttribute("aria-expanded","false"); } });
+
+  updateBuild(); renderBag();
+})();
+</script>
+</body>
+</html>

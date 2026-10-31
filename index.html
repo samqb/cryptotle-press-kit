@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Cryptotle press kit: live site, explainer and promo videos, pitch deck, roll-up model and billboards. A Halloween hackathon parody.">
+<style>img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<title>Cryptotle Press Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Zilla+Slab:wght@400;600&family=Gochi+Hand&display=swap">
+<style>
+/* Layout: kraft-paper press kit. Red masthead band, then a 3-col tile wall (1 col on phones), modal viewer for every tile. Single light look by choice (Chipotle-style parchment). */
+:root{
+  --red:#A81612; --red-deep:#7f0f0c; --brown:#451400; --kraft:#F5EFE6; --card:#FFFFFF;
+  --pumpkin:#E8731A; --zombie:#7FB23A; --line:#e4d9c8; --muted:#7a5a45; --scrim:rgba(30,10,0,.86);
+  --display:"Oswald","Arial Narrow",Arial,sans-serif;
+  --body:"Zilla Slab",Georgia,serif;
+  --hand:"Gochi Hand","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--kraft);color:var(--brown);font-family:var(--body);font-size:17px;line-height:1.5;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--red)}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* promo bar + masthead */
+.promo{background:var(--brown);color:var(--kraft);font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:13px;text-align:center}
+.promo .wrap{padding-block:8px}
+.promo b{color:var(--pumpkin)}
+.mast{background:var(--red);color:#fff;position:relative;overflow:hidden}
+.mast .wrap{padding-block:44px 52px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.medal{width:120px;height:120px;flex:none}
+.mast h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,8vw,92px);line-height:.92;margin:0;letter-spacing:.01em;text-wrap:balance}
+.mast .sub{font-family:var(--display);letter-spacing:.42em;font-size:clamp(12px,1.6vw,16px);margin:10px 0 0;opacity:.92}
+.mast .tag{font-family:var(--hand);font-size:clamp(22px,3vw,30px);margin:14px 0 0;color:#ffe9d6}
+.mast .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-family:var(--display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid rgba(255,255,255,.55);border-radius:999px;padding:4px 12px}
+.chip.green{background:var(--zombie);border-color:var(--zombie);color:var(--brown)}
+.drip{position:absolute;left:0;right:0;bottom:-1px;height:22px;display:block}
+
+/* tiles */
+main .wrap{padding-block:40px 24px}
+.lead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;margin-bottom:22px}
+.lead h2{font-family:var(--display);text-transform:uppercase;font-size:28px;margin:0;letter-spacing:.02em}
+.lead p{margin:0;color:var(--muted);max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;background:var(--card);border:2px solid var(--brown);border-radius:14px;overflow:hidden;box-shadow:5px 5px 0 var(--brown);transition:transform .15s ease,box-shadow .15s ease;min-width:0}
+.tile:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--red)}
+.tile:focus-visible{outline:3px solid var(--pumpkin);outline-offset:3px}
+.tile.big{grid-column:span 2}
+.thumb{position:relative;aspect-ratio:16/9;background:var(--brown);overflow:hidden;max-width:100%}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.tile.big .thumb{aspect-ratio:16/8}
+.play{position:absolute;inset:auto auto 14px 14px;width:54px;height:54px;border-radius:50%;background:var(--red);border:3px solid #fff;display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.play::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.dur{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.7);color:#fff;font-family:var(--display);font-size:13px;letter-spacing:.06em;padding:2px 8px;border-radius:4px}
+.body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:6px;flex:1}
+.kind{font-family:var(--display);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--red)}
+.tile h3{font-family:var(--display);text-transform:uppercase;font-size:22px;line-height:1.1;margin:0;letter-spacing:.01em}
+.tile p{margin:0;color:var(--muted);font-size:15.5px}
+.cta{margin-top:auto;padding-top:10px;font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--red)}
+.cta::after{content:" \2192"}
+
+/* typographic thumbs */
+.numthumb{background:var(--brown);color:var(--kraft);display:grid;grid-template-columns:1fr 1fr;gap:1px;height:100%}
+.numthumb div{background:var(--brown);padding:12px 14px;display:flex;flex-direction:column;justify-content:center;border:1px solid rgba(245,239,230,.12)}
+.numthumb b{font-family:var(--display);font-size:clamp(22px,3vw,30px);color:#fff;line-height:1}
+.numthumb span{font-family:var(--display);font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-top:4px}
+.numthumb b.hot{color:var(--zombie)}
+.docthumb{height:100%;display:grid;place-items:center;background:repeating-linear-gradient(0deg,#fff,#fff 23px,#f0e6d6 24px);}
+.docthumb .paper{width:58%;aspect-ratio:3/4;max-width:100%;background:#fff;border:2px solid var(--brown);box-shadow:4px 4px 0 var(--red);padding:12px;display:flex;flex-direction:column;gap:6px;transform:rotate(-2deg)}
+.docthumb .paper i{display:block;height:7px;background:#e8dccb;border-radius:2px}
+.docthumb .paper i:first-child{height:12px;width:70%;background:var(--red)}
+.pending{height:100%;display:grid;place-items:center;text-align:center;background:var(--pumpkin);color:var(--brown);padding:16px}
+.pending b{font-family:var(--display);font-size:clamp(22px,3vw,30px);text-transform:uppercase;display:block;line-height:1.05}
+.pending span{font-family:var(--hand);font-size:20px}
+.tile.is-pending{cursor:default}
+.tile.is-pending:hover{transform:none;box-shadow:5px 5px 0 var(--brown)}
+
+.teamnote{margin:26px 0 0;font-size:15px;color:var(--muted)}
+.teamnote b{color:var(--brown)}
+
+footer{background:var(--brown);color:var(--kraft);margin-top:36px}
+footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:14.5px}
+footer .wm{font-family:var(--display);letter-spacing:.06em;font-size:18px}
+footer p{margin:0;max-width:70ch;opacity:.85}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:50;background:var(--scrim);display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 12px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 16px) max(16px,env(safe-area-inset-left,0px))}
+.mbar{display:flex;align-items:center;gap:12px;color:#fff;max-width:1200px;width:100%;margin:0 auto 10px}
+.mbar h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.06em;font-size:18px;margin:0;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.btn{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:14px;background:var(--red);color:#fff;border:0;border-radius:999px;padding:8px 16px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn.ghost{background:transparent;border:1.5px solid rgba(255,255,255,.6)}
+.btn:focus-visible{outline:3px solid var(--pumpkin);outline-offset:2px}
+.mstage{flex:1;min-height:0;max-width:1200px;width:100%;margin:0 auto;display:flex;align-items:center;justify-content:center}
+.mstage video,.mstage .slide{max-width:100%;max-height:100%;border-radius:8px;background:#000;display:block}
+.mstage iframe{width:100%;height:100%;border:0;border-radius:10px;background:#fff}
+.deckwrap{display:flex;flex-direction:column;gap:12px;align-items:center;width:100%;height:100%;min-height:0}
+.deckwrap .slidebox{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;width:100%}
+.deckwrap .slide{object-fit:contain;width:auto;height:auto}
+.deckctl{display:flex;gap:12px;align-items:center;color:#fff;font-family:var(--display);letter-spacing:.08em}
+.deckctl .count{min-width:70px;text-align:center;font-variant-numeric:tabular-nums}
+.panel{background:var(--kraft);color:var(--brown);border-radius:12px;padding:22px;max-width:760px;width:100%;max-height:100%;overflow:auto}
+.panel h5{font-family:var(--display);text-transform:uppercase;font-size:20px;margin:0 0 12px}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:15.5px}
+th,td{padding:7px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{background:var(--red);color:#fff;font-family:var(--display);font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:13px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}
+.kpi{background:#fff;border:2px solid var(--brown);border-radius:10px;padding:10px 12px}
+.kpi b{font-family:var(--display);font-size:24px;display:block;line-height:1.05}
+.kpi span{font-size:13px;color:var(--muted)}
+.panel .note{font-size:14px;color:var(--muted);margin:14px 0 0}
+
+@media (max-width:860px){
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tile.big{grid-column:span 2}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .tile.big{grid-column:auto}
+  .tile.big .thumb{aspect-ratio:16/9}
+  .mast .wrap{grid-template-columns:1fr;gap:14px;padding-block:28px 40px}
+  .medal{width:84px;height:84px}
+  .mbar .btn.ghost{display:none}
+}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}.tile:hover{transform:none}}
+</style>
+
+</head>
+<body>
+<div class="promo"><div class="wrap">Hackathon build, 31 Oct 2026 · <b>Raising CHF 6.66M</b> · Now delivering in Carouge</div></div>
+
+<header class="mast">
+  <div class="wrap">
+    <svg class="medal" viewBox="0 0 120 120" aria-hidden="true">
+      <circle cx="60" cy="60" r="57" fill="#fff"/>
+      <circle cx="60" cy="60" r="51" fill="none" stroke="#A81612" stroke-width="3" stroke-dasharray="2 5"/>
+      <circle cx="60" cy="60" r="44" fill="#A81612"/>
+      <path d="M40 64c-6-2-8-10-3-15 0-7 7-11 13-9 3-5 11-6 15-2 6-2 13 2 13 9 6 3 6 12 0 15 1 7-6 11-12 9-4 4-12 4-16 0-6 2-12-2-10-7z" fill="#F7A9B8" stroke="#fff" stroke-width="2.5"/>
+      <path d="M50 52c3 2 3 6 0 8M62 47c-2 4 0 8 4 9M70 60c-3 0-5 3-4 6M56 66c2-2 6-2 7 1" fill="none" stroke="#c4566b" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M58 37c0-5 3-8 7-9" fill="none" stroke="#7FB23A" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>CRYPTOTLE</h1>
+      <p class="sub">MEXICAN GRAVE</p>
+      <p class="tag">Flesh with Integrity. Everything we made, in one place.</p>
+      <div class="meta"><span class="chip green">Press kit</span><span class="chip">Dave &amp; Sam · Geneva</span><span class="chip">Seed · CHF 6.66M</span></div>
+    </div>
+  </div>
+  <svg class="drip" viewBox="0 0 1200 22" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1200v6c-30 0-34 14-52 14s-14-14-46-14-40 10-64 10-20-10-58-10-30 16-60 16-28-16-62-16-40 8-70 8-30-8-60-8-36 14-66 14-26-14-58-14-44 10-70 10-26-10-60-10-30 12-54 12-30-12-62-12-38 16-66 16-30-16-60-16-40 9-62 9-24-9-56-9-30 13-58 13-30-13-60-13-34 10-58 10S30 6 0 6z" fill="#F5EFE6"/></svg>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="lead">
+      <h2>Pick your poison</h2>
+      <p>Tap a tile to open it here. Videos play inline, the deck pages through, the site runs live.</p>
+    </div>
+
+    <div class="grid">
+      <button class="tile big" data-open="site" aria-label="Open the live Cryptotle website">
+        <div class="thumb"><img src="media/site-thumb.jpg" alt="Cryptotle website hero: Flesh with Integrity."></div>
+        <div class="body"><span class="kind">Live website</span><h3>Order a Brainrito</h3><p>The full Cryptotle site. Build a bowl, pick GhoulDash or Hearse Express, check out. ETA: eventually.</p><span class="cta">Open the site</span></div>
+      </button>
+
+      <button class="tile" data-open="explainer" aria-label="Play the explainer video">
+        <div class="thumb"><img src="media/explainer-v2-poster.jpg" alt="Cartoon jogger outrunning a zombie: Hunting humans is a broken channel"><span class="play"></span><span class="dur">1:51</span></div>
+        <div class="body"><span class="kind">Explainer video</span><h3>In a world...</h3><p>Horror-trailer pitch, narrated by Declan Graves. Some humans have shotguns. Buy at 4x. Exit at 12x.</p><span class="cta">Watch</span></div>
+      </button>
+
+      <button class="tile" data-open="promo" aria-label="Play the promo video">
+        <div class="thumb"><img src="media/promo-poster.jpg" alt="Still from the Cryptotle promo"><span class="play"></span><span class="dur">0:50</span></div>
+        <div class="body"><span class="kind">Promo spot</span><h3>What if lunch found you?</h3><p>The Silicon Valley launch ad. Ukulele, felt piano, three taps, thirty minutes.</p><span class="cta">Watch</span></div>
+      </button>
+
+      <button class="tile" data-open="deck" aria-label="Page through the pitch deck">
+        <div class="thumb"><img src="media/slides/s-01.jpg" alt="Pitch deck title slide"></div>
+        <div class="body"><span class="kind">Pitch deck · 13 slides</span><h3>CHF 6.66M for 25%</h3><p>The seed pitch. Roll up the morgues, rent the delivery, own the brain supply.</p><span class="cta">Page through</span></div>
+      </button>
+
+      <button class="tile" data-open="model" aria-label="Open the roll-up model summary">
+        <div class="thumb"><div class="numthumb">
+          <div><b>40</b><span>Crypts by Y5</span></div>
+          <div><b>CHF 66.6M</b><span>Y5 revenue</span></div>
+          <div><b>4x → 12x</b><span>Entry → exit</span></div>
+          <div><b class="hot">6.66x</b><span>Seed MOIC</span></div>
+        </div></div>
+        <div class="body"><span class="kind">Roll-up model</span><h3>The numbers add up</h3><p>Five-year PE roll-up. 74% of the value comes from multiple expansion. As is tradition.</p><span class="cta">See the model</span></div>
+      </button>
+
+      <button class="tile" data-open="billboards" aria-label="Browse the billboard campaign">
+        <div class="thumb"><img src="media/billboards/thumb.jpg" alt="Times Square screen: Zero churn. They never leave."><span class="dur">8 images</span></div>
+        <div class="body"><span class="kind">Outdoor campaign</span><h3>Zero churn. They never leave.</h3><p>Five bulletins plus three Times Square mock-ups. Brains as a Service.</p><span class="cta">Browse</span></div>
+      </button>
+
+      <a class="tile" href="https://docs.google.com/document/d/1lzfCbVQM9pWqbTs9gxUjSOSpcOSKvT-6mvCksPirkSA/edit" target="_blank" rel="noopener">
+        <div class="thumb"><div class="docthumb"><div class="paper"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="body"><span class="kind">Google Doc · team</span><h3>The brand bible</h3><p>Name, palette, menu, copy jokes and every locked number.</p><span class="cta">Open doc</span></div>
+      </a>
+
+      <a class="tile" href="https://docs.google.com/document/d/1TYwEa__qyKT1nHZNwLjqm93QAt2SB4Al2Cp7Mn1cPFw/edit" target="_blank" rel="noopener">
+        <div class="thumb"><div class="docthumb"><div class="paper"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+        <div class="body"><span class="kind">Google Doc · team</span><h3>Explainer script</h3><p>Scene by scene: visuals, on-screen text and narration.</p><span class="cta">Open doc</span></div>
+      </a>
+
+      <a class="tile" href="https://drive.google.com/drive/folders/1AwslARjXT-mQtwGKrkhvVEresdMAdQY3" target="_blank" rel="noopener">
+        <div class="thumb"><div class="numthumb">
+          <div><b>.pptx</b><span>Editable deck</span></div>
+          <div><b>.xlsx</b><span>Full model</span></div>
+          <div><b>.mp4</b><span>Full-res video</span></div>
+          <div><b>.png</b><span>Billboards</span></div>
+        </div></div>
+        <div class="body"><span class="kind">Google Drive · team</span><h3>Source files</h3><p>Originals to download and edit. Needs access to the shared folder.</p><span class="cta">Open folder</span></div>
+      </a>
+    </div>
+
+    <p class="teamnote"><b>Tip:</b> arrow keys page through the deck and billboards. <b>Heads up:</b> tiles marked "team" open Google Drive and need access to the shared folder. Everything else works for anyone with this link.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">CRYPTOTLE · MEXICAN GRAVE</span>
+    <p>Parody made for a Halloween hackathon by Dave &amp; Sam, Geneva. Not affiliated with Chipotle Mexican Grill. No humans were harmed. Probably.</p>
+  </div>
+</footer>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mtitle">
+  <div class="mbar">
+    <h4 id="mtitle"></h4>
+    <span id="mextra"></span>
+    <button class="btn" id="mclose" type="button">Close</button>
+  </div>
+  <div class="mstage" id="mstage"></div>
+</div>
+
+<script>
+(function(){
+  const modal=document.getElementById('modal'), stage=document.getElementById('mstage'),
+        title=document.getElementById('mtitle'), extra=document.getElementById('mextra'),
+        closeBtn=document.getElementById('mclose');
+  const DECK=Array.from({length:13},(_,i)=>({src:'media/slides/s-'+String(i+1).padStart(2,'0')+'.jpg',alt:'Pitch deck slide '+(i+1)}));
+  const BB=[
+    ['ts-02-giant-screen-zero-churn','Times Square: Zero churn. They never leave.'],
+    ['ts-01-street-wide-brains-as-a-service','Times Square street view: Brains as a Service.'],
+    ['ts-03-giant-screen-uber-for-brains','Times Square: Uber for brains. Literally the brains.'],
+    ['01-brains-as-a-service','Bulletin: Brains as a Service.'],
+    ['02-zero-churn','Bulletin: Zero churn. They never leave.'],
+    ['03-uber-for-brains','Bulletin: Uber for brains. Literally the brains.'],
+    ['04-cac-zero','Bulletin: Your CAC is zero when customers shamble in.'],
+    ['05-hiring-undead','Bulletin: We are hiring. Must be undead.']
+  ].map(([f,a])=>({src:'media/billboards/'+f+'.jpg',alt:a}));
+  let SLIDES=DECK, slideIdx=0, lastFocus=null;
+
+  const views={
+    site:{t:'Cryptotle.com (live site)',render(){
+      stage.innerHTML='<iframe src="site/index.html" title="Cryptotle website"></iframe>';
+    }},
+    explainer:{t:'Explainer · In a world...',render(){video('media/explainer-v2.mp4','media/explainer-v2-poster.jpg');}},
+    promo:{t:'Promo · What if lunch found you?',render(){video('media/promo.mp4','media/promo-poster.jpg');}},
+    deck:{t:'Pitch deck',render(){carousel(DECK);}},
+    billboards:{t:'Billboard campaign',render(){carousel(BB);}},
+    model:{t:'Roll-up model · summary',render(){
+      stage.innerHTML=`<div class="panel">
+        <div class="kpis">
+          <div class="kpi"><b>CHF 6.66M</b><span>Seed for 25%</span></div>
+          <div class="kpi"><b>CHF 177.6M</b><span>Exit EV at 12x</span></div>
+          <div class="kpi"><b>6.66x</b><span>Seed MOIC</span></div>
+          <div class="kpi"><b>46%</b><span>IRR, 5 years</span></div>
+        </div>
+        <h5>Five years of compounding corpses</h5>
+        <div class="tablewrap"><table>
+          <thead><tr><th>CHF M</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y4</th><th>Y5</th></tr></thead>
+          <tbody>
+            <tr><td>Crypts owned (cumulative)</td><td>6</td><td>13</td><td>22</td><td>31</td><td>40</td></tr>
+            <tr><td>Revenue</td><td>2.2</td><td>8.8</td><td>22.2</td><td>44.4</td><td>66.6</td></tr>
+            <tr><td>EBITDA</td><td>0.1</td><td>1.2</td><td>4.0</td><td>9.1</td><td>14.8</td></tr>
+            <tr><td>EBITDA margin</td><td>5.0%</td><td>13.8%</td><td>17.8%</td><td>20.4%</td><td>22.2%</td></tr>
+          </tbody>
+        </table></div>
+        <h5 style="margin-top:20px">Where the CHF 177.6M comes from</h5>
+        <div class="tablewrap"><table>
+          <tbody>
+            <tr><td>Price paid for 40 crypts (at 4x)</td><td>18.4</td></tr>
+            <tr><td>EBITDA growth</td><td>40.8</td></tr>
+            <tr><td>Multiple expansion (4x to 12x)</td><td>118.4</td></tr>
+            <tr><td><b>Exit enterprise value</b></td><td><b>177.6</b></td></tr>
+          </tbody>
+        </table></div>
+        <p class="note">Acquisitions funded by CHF 4.2M of seed, CHF 7.0M of seller notes and cash flow. Full formula model (.xlsx) is in the team Drive folder.</p>
+        <p style="margin:14px 0 0"><a class="btn" href="https://drive.google.com/file/d/1azf1gzi0aW2JHaZytxdHdJOoKU_VKhDv/view" target="_blank" rel="noopener">Open the .xlsx (team)</a></p>
+      </div>`;
+    }}
+  };
+  function carousel(list){
+    SLIDES=list; slideIdx=0;
+    stage.innerHTML='<div class="deckwrap"><div class="slidebox"><img class="slide" id="slideimg" alt=""></div>'+
+      '<div class="deckctl"><button class="btn ghost" id="prev" type="button">Prev</button><span class="count" id="count"></span><button class="btn" id="next" type="button">Next</button></div></div>';
+    document.getElementById('prev').onclick=()=>go(-1);
+    document.getElementById('next').onclick=()=>go(1);
+    showSlide();
+  }
+  function video(src,poster){
+    stage.innerHTML='<video controls playsinline preload="metadata" poster="'+poster+'" src="'+src+'"></video>';
+  }
+  function showSlide(){
+    const img=document.getElementById('slideimg'); if(!img) return;
+    img.src=SLIDES[slideIdx].src; img.alt=SLIDES[slideIdx].alt;
+    document.getElementById('count').textContent=(slideIdx+1)+' / '+SLIDES.length;
+  }
+  function go(d){slideIdx=(slideIdx+d+SLIDES.length)%SLIDES.length;showSlide();}
+
+  function open(name,fromHash){
+    const v=views[name]; if(!v) return;
+    lastFocus=document.activeElement;
+    title.textContent=v.t; extra.innerHTML='';
+    if(name==='site') extra.innerHTML='<a class="btn ghost" href="site/index.html" target="_blank" rel="noopener">Full page</a>';
+    v.render(); modal.hidden=false; document.body.style.overflow='hidden'; closeBtn.focus();
+    if(!fromHash && location.hash!=='#'+name){ try{history.replaceState(null,'','#'+name);}catch(e){location.hash=name;} }
+  }
+  function close(){
+    stage.innerHTML=''; modal.hidden=true; document.body.style.overflow='';
+    if(location.hash){ try{history.replaceState(null,'',location.pathname+location.search);}catch(e){} }
+    if(lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>{
+    if(b.classList.contains('is-pending')) return;
+    open(b.dataset.open);
+  }));
+  closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',e=>{ if(e.target===modal||e.target===stage) close(); });
+  document.addEventListener('keydown',e=>{
+    if(modal.hidden) return;
+    if(e.key==='Escape') close();
+    if(document.getElementById('slideimg')){ if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1); }
+  });
+  function fromHash(){ const n=location.hash.slice(1); if(views[n]) open(n,true); else if(!modal.hidden) close(); }
+  window.addEventListener('hashchange',fromHash);
+  fromHash();
+})();
+</script>
+
+</body>
+</html>
