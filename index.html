@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Cryptotle press kit: live site, explainer and promo videos, pitch deck, roll-up model and billboards. A Halloween hackathon parody.">
+<meta name="description" content="Cryptotle press kit: live site, explainer and promo videos, pitch deck, roll-up model and billboards. A Switzerland AI Halloween hackathon parody by Sam and Dave.">
 <style>img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <title>Cryptotle Press Kit</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -82,8 +82,26 @@ main .wrap{padding-block:40px 24px}
 .teamnote b{color:var(--brown)}
 
 footer{background:var(--brown);color:var(--kraft);margin-top:36px}
-footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;font-size:14.5px}
+footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:18px 28px;justify-content:space-between;font-size:14.5px}
 footer .wm{font-family:var(--display);letter-spacing:.06em;font-size:18px}
+.foot{align-items:flex-end}
+.foot-text{display:flex;flex-direction:column;gap:8px;min-width:0;flex:1 1 320px}
+.squares{display:flex;gap:14px;margin-left:auto}
+.sq{width:156px;aspect-ratio:1;max-width:100%;border-radius:12px;text-decoration:none;display:flex;flex-direction:column;box-shadow:4px 4px 0 rgba(0,0,0,.35);transition:transform .15s ease}
+.sq:hover{transform:translate(-2px,-2px)}
+.sq:focus-visible{outline:3px solid var(--pumpkin);outline-offset:3px}
+.sq-ai{background:var(--red);color:#fff;padding:13px 13px 11px;gap:1px}
+.sq-ai .cross{width:24px;height:24px;flex:none}
+.sq-ai .sq-kicker{font-size:12px;opacity:.85;margin-top:auto}
+.sq-ai b{font-family:var(--display);font-size:18px;line-height:1.05;text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.sq-ai .sq-sub{font-family:var(--hand);font-size:16px;line-height:1.1;color:#ffe9d6}
+.sq-ai .sq-url{font-family:var(--display);font-size:12px;letter-spacing:.06em;margin-top:6px}
+.sq-qr{background:#fff;color:var(--brown);padding:10px 10px 8px;align-items:center;gap:4px}
+.sq-qr .qrbox{flex:1;min-height:0;width:100%;display:block}
+.sq-qr .qrbox svg{width:100%;height:100%;display:block}
+.sq-qr .sq-url{font-family:var(--display);font-size:12px;letter-spacing:.08em}
+@media (max-width:560px){.squares{margin-left:0}.sq{width:146px}}
+@media (prefers-reduced-motion:reduce){.sq{transition:none}.sq:hover{transform:none}}
 footer p{margin:0;max-width:70ch;opacity:.85}
 
 /* modal */
@@ -148,7 +166,7 @@ thead th{background:var(--red);color:#fff;font-family:var(--display);font-weight
       <h1>CRYPTOTLE</h1>
       <p class="sub">MEXICAN GRAVE</p>
       <p class="tag">Flesh with Integrity. Everything we made, in one place.</p>
-      <div class="meta"><span class="chip green">Press kit</span><span class="chip">Dave &amp; Sam · Geneva</span><span class="chip">Seed · CHF 6.66M</span></div>
+      <div class="meta"><span class="chip green">Press kit</span><span class="chip">Sam &amp; Dave · Geneva</span><span class="chip">Seed · CHF 6.66M</span></div>
     </div>
   </div>
   <svg class="drip" viewBox="0 0 1200 22" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1200v6c-30 0-34 14-52 14s-14-14-46-14-40 10-64 10-20-10-58-10-30 16-60 16-28-16-62-16-40 8-70 8-30-8-60-8-36 14-66 14-26-14-58-14-44 10-70 10-26-10-60-10-30 12-54 12-30-12-62-12-38 16-66 16-30-16-60-16-40 9-62 9-24-9-56-9-30 13-58 13-30-13-60-13-34 10-58 10S30 6 0 6z" fill="#F5EFE6"/></svg>
@@ -223,9 +241,24 @@ thead th{background:var(--red);color:#fff;font-family:var(--display);font-weight
 </main>
 
 <footer>
-  <div class="wrap">
-    <span class="wm">CRYPTOTLE · MEXICAN GRAVE</span>
-    <p>Parody made for a Halloween hackathon by Dave &amp; Sam, Geneva. Not affiliated with Chipotle Mexican Grill. No humans were harmed. Probably.</p>
+  <div class="wrap foot">
+    <div class="foot-text">
+      <span class="wm">CRYPTOTLE · MEXICAN GRAVE</span>
+      <p>Parody made for the Switzerland AI Halloween hackathon by Sam &amp; Dave, Geneva. Not affiliated with Chipotle Mexican Grill. No humans were harmed. Probably.</p>
+    </div>
+    <div class="squares">
+      <a class="sq sq-ai" href="http://switzerland-ai.com/en" target="_blank" rel="noopener">
+        <svg class="cross" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="4" fill="#fff"/><path d="M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z" fill="#A81612"/></svg>
+        <span class="sq-kicker">Made for the</span>
+        <b>Switzerland AI</b>
+        <span class="sq-sub">Halloween hackathon</span>
+        <span class="sq-url">switzerland-ai.com &#8594;</span>
+      </a>
+      <a class="sq sq-qr" href="https://sambourton.ai/" target="_blank" rel="noopener">
+        <span class="qrbox"><svg role="img" aria-label="QR code linking to sambourton.ai" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" class="segno"><path fill="#fff" d="M0 0h29v29h-29z"/><path class="qrline" stroke="#451400" d="M2 2.5h7m4 0h1m1 0h3m2 0h7m-25 1h1m5 0h1m1 0h3m3 0h3m1 0h1m5 0h1m-25 1h1m1 0h3m1 0h1m2 0h2m1 0h1m1 0h2m2 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m2 0h4m5 0h1m1 0h3m1 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h6m2 0h1m1 0h3m1 0h1m-25 1h1m5 0h1m2 0h1m1 0h1m2 0h2m2 0h1m5 0h1m-25 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-15 1h4m1 0h2m-17 1h1m1 0h1m1 0h1m1 0h1m5 0h2m6 0h1m2 0h1m-24 1h6m1 0h1m1 0h2m1 0h2m2 0h3m5 0h1m-25 1h2m2 0h3m3 0h3m1 0h1m1 0h1m1 0h2m2 0h3m-25 1h1m1 0h2m1 0h1m1 0h1m1 0h2m2 0h2m4 0h1m3 0h1m-18 1h1m2 0h1m1 0h3m3 0h3m1 0h1m1 0h2m-23 1h1m1 0h2m1 0h2m1 0h3m3 0h3m2 0h1m2 0h1m-25 1h1m4 0h3m1 0h4m1 0h1m2 0h1m1 0h1m2 0h3m-24 1h1m2 0h2m3 0h2m1 0h5m3 0h1m2 0h1m-24 1h1m3 0h4m3 0h1m1 0h2m1 0h6m-14 1h4m4 0h1m3 0h2m1 0h2m-25 1h7m2 0h1m3 0h1m1 0h2m1 0h1m1 0h2m1 0h2m-25 1h1m5 0h1m2 0h1m1 0h1m1 0h2m1 0h1m3 0h2m1 0h2m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h6m1 0h2m-25 1h1m1 0h3m1 0h1m3 0h4m2 0h1m2 0h4m-23 1h1m1 0h3m1 0h1m1 0h2m1 0h2m1 0h2m4 0h1m3 0h1m-25 1h1m5 0h1m3 0h1m1 0h2m1 0h3m2 0h2m1 0h1m-24 1h7m1 0h1m1 0h3m1 0h3m2 0h1m3 0h2"/></svg></span>
+        <span class="sq-url">sambourton.ai</span>
+      </a>
+    </div>
   </div>
 </footer>
 
